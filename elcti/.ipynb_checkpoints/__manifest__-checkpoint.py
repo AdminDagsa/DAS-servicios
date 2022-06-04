@@ -16,7 +16,7 @@
     """,
     # data files always loaded at installation
     'data': [
-        'views/view.xml',
+        #'views/view.xml',
     ],
     # data files containing optionally loaded demonstration data
     #'demo': [
