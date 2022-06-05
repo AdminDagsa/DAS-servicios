@@ -40,11 +40,19 @@ class ContactosCrm(models.Model):
         ('H', 'Hombre'),
         ('M', 'Mujer')],
         string='Sexo')
-    #clasificacion_imc = fields.Selection('Clasificacion IMC', related="cuestionario_llave.clasificacion")
-    #cuestionario_llave = fields.One2many('cuestionario.llave', 'contacto', string="Cuestionario llave")
-    #citas = fields.One2many('calendar.event', 'contacto', string="Citas programadas")
-    #ciudad = fields.Many2one('res.city', string="Ciudad")
+    cuestionario_llave = fields.One2many('cuestionario.llave', 'contacto', string="Cuestionario llave")
+    clasificacion_imc = fields.Selection('Clasificacion IMC', related="cuestionario_llave.clasificacion")
+    citas = fields.One2many('calendar.event', 'contacto', string="Citas programadas")
+    ciudad = fields.Many2one('res.city', string="Ciudad")
     #contacto = fields.Many2one('llamada.contacto', string="Llamada de contacto")
+    llamada_contacto = fields.Selection([
+        ('1','1er contacto'),
+        ('2','2do contacto'),
+        ('3','3er contacto'),
+        ('4','4to contacto'),
+        ('5','5to contacto')],
+        string="Llamada de contacto"
+    )
     #motivo_cancelacion = fields.Many2one('motivos.cancelacion', string="Motivos de cancelación")
     #conteo_llamadas = fields.Integer('Conteo de llamadas', compute="_conteo_llamadas")
     #def _conteo_llamadas(self):

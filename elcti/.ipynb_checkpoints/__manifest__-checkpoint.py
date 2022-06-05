@@ -16,7 +16,9 @@
     """,
     # data files always loaded at installation
     'data': [
-        #'views/view.xml',
+        #'security/permisos.csv',
+        'views/crm_elcti.xml',
+        'views/crm_menu.xml',
     ],
     # data files containing optionally loaded demonstration data
     #'demo': [
