@@ -16,7 +16,7 @@
     """,
     # data files always loaded at installation
     'data': [
-        #'security/permisos.csv',
+        'security/ir.model.access.csv',
         'views/crm_elcti.xml',
         'views/crm_menu.xml',
     ],

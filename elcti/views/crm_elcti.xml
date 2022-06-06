@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="crm_medix_oportunidades" model="ir.actions.act_window">
-        <field name="name">CRM En Línea Con Tu Imagen</field>
-        <field name="res_model">crm.lead</field>
-        <field name="view_mode">kanban,tree,form</field>
-    </record>
-    
-    <record id="crm_medix_calendario" model="ir.actions.act_window">
-        <field name="name">Calendario de citas</field>
-        <field name="res_model">calendar.event</field>
-        <field name="view_mode">calendar,tree,form</field>
-    </record>
-    
-    <record id="crm_medix_llamadas" model="ir.actions.act_window">
-        <field name="name">Llamadas</field>
-        <field name="res_model">x_llamadas</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    
-    <record id="crm_medix_recetas" model="ir.actions.act_window">
-        <field name="name">Recetas</field>
-        <field name="res_model">recetas.medix</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-    
-    <record id="crm_medix_farmacovigilacia" model="ir.actions.act_window">
-        <field name="name">Farmacovigilancia</field>
-        <field name="res_model">farmacovigilancia</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+    <data>
+        <record id="crm_medix_oportunidades" model="ir.actions.act_window">
+            <field name="name">CRM En Línea Con Tu Imagen</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record id="crm_medix_calendario" model="ir.actions.act_window">
+            <field name="name">Calendario de citas</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+        <record id="crm_medix_llamadas" model="ir.actions.act_window">
+            <field name="name">Llamadas</field>
+            <field name="res_model">x_llamadas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="crm_medix_recetas" model="ir.actions.act_window">
+            <field name="name">Recetas</field>
+            <field name="res_model">recetas.medix</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="crm_medix_farmacovigilacia" model="ir.actions.act_window">
+            <field name="name">Farmacovigilancia</field>
+            <field name="res_model">farmacovigilancia</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="crm_medix_cuestionario_llave" model="ir.actions.act_window">
+            <field name="name">Cuestionario llave</field>
+            <field name="res_model">cuestionario.llave</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="crm_medix_farmacovigilacia" model="ir.actions.act_window">
+            <field name="name">Farmacovigilancia</field>
+            <field name="res_model">farmacovigilancia</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
 </odoo>

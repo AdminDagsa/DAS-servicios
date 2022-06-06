@@ -5,6 +5,7 @@ class CuestionarioLlave(models.Model):
     _name = "recetas.medix"
     _description = "Recetas"
 
+    active = fields.Boolean('Activo', default=True)
     nombre = fields.Char('Nombre', index=True)
     contacto = fields.Many2one('crm.lead', string='Contacto', index=True)
     diagnostico = fields.Char('Diagnóstico')
