@@ -49,7 +49,7 @@ class ContactosCrm(models.Model):
         ('1','1er contacto'),
         ('2','2do contacto'),
         ('3','3er contacto'),
-        ('4','4to contacto'),
+        ('4''4to contacto'),
         ('5','5to contacto')],
         string="Llamada de contacto"
     )

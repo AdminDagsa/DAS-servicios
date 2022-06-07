@@ -10,8 +10,10 @@
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <field name="name"/>
+                            <div class="oe_kanban_content oe_kanban_global_click">
+                                <div class="o_kanban_record_title">
+                                    <strong><field name="name"/></strong>
+                                </div>
                             </div>
                             <!--div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click">
                                 <div class="o_dropdown_kanban dropdown">
@@ -81,37 +83,17 @@
                     <header>
                         <field name="stage_id"
                             widget="statusbar"
-                            options="{'clickable': '1', 'fold_field': 'fold'}"
-                            domain="['|', ('team_id', '=', team_id), ('team_id', '=', False)]"
-                            attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}"/>
+                            clickable="1"/>
                     </header>
-                    <sheet>
-                        <field name="team_id" invisible="1"/>
-                    </sheet>
-                        <!--field name="stage_id" widget="statusbar"/-->
-                        <!--field name="stage_id"
-                            widget="statusbar"
-                            options="{'clickable': '1', 'fold_field': 'fold'}"
-                            domain="['|', ('team_id', '=', team_id), ('team_id', '=', False)]"
-                            attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}"/-->
-                    <!--/header-->
-                    <!--sheet>
-                        <field name="active" invisible="1"/>
-                        <field name="type" invisible="1"/>
-                    </sheet-->
                     <!--div class="text-center alert alert-primary oe_edit_only" role="alert" attrs="{'invisible': ['|', ('ribbon_message', '=', False), ('ribbon_message', '=', '')]}">
                         <field name="ribbon_message"/>
-                    </div>
+                    </div-->
                     <sheet>
+                        <!--field name="team_id" invisible="1"/>
                         <field name="active" invisible="1"/>
-                        <div class="oe_button_box" name="button_box"-->
-                            <!--button name="683" type="action" class="oe_stat_button" icon="fa-calendar" domain="{'x_studio_paciente_crm','=', id}" attrs="{'invisible': [('type', '=', 'lead')]}">
-                                <div class="o_stat_info">
-                                    <field name="meeting_count" class="o_stat_value"/>
-                                    <span class="o_stat_text">Citas Médicas</span>
-                                </div>
-                            </button-->
-                        <!--/div>
+                        <field name="type" invisible="1"/>
+                        <field name="is_blacklisted" invisible="1"/>
+                        <field name="phone_blacklisted" invisible="1"/>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" string="Paciente"/>
                             <h1>
@@ -119,9 +101,9 @@
                             </h1-->
                             <!--h2 class="o_row no-gutters align-items-end">
                             </h2-->
-                        <!--/div>
-                        <group>
-                            <group name="opportunity_partner" attrs="{'invisible': [('type', '=', 'lead')]}">
+                        <!--/div-->
+                        <!--group>
+                            <group>
                                 <field name="nombres" string="Nombres"/>
                                 <field name="primer_apellido" string="Primer Apellido"/>
                                 <field name="segundo_apellido" string="Segundo Apellido"/>
@@ -145,17 +127,17 @@
                                     <field name="phone" widget="phone"/>
                                 </div>
                             </group>
-                            <group>
-                                <field name="x_studio_etapa" string="etapa" attrs="{}" invisible="1"/>
-                                <field name="fecha_de_nacimiento" string="Fecha de nacimiento"/>
+                            <group-->
+                                <!--field name="x_studio_etapa" string="etapa" attrs="{}" invisible="1"/-->
+                                <!--field name="fecha_de_nacimiento" string="Fecha de nacimiento"/>
                                 <field name="edad" string="Edad"/>
                                 <field name="sexo"/>
                                 <field name="clasificacion_imc" string="Clasificacion IMC"/>
                             </group>
-                        </group>
-                        <group>
+                        </group-->
+                        <!--group>
                             <group>
-                                <field name="llamada_contacto"/>
+                                <field name="llamada_contacto" widget="statusbar" clickable="1" style="display: flex; flex-direction: column-reverse"/>
                                 <field name="acepta_politica"/>
                             </group>
                             <group>
@@ -173,7 +155,7 @@
                                         <span class="mx-1 clearfix">Minutos</span>
                                     </div>
                             </group>
-                        </group>
+                        </group-->
                         <notebook>
                             <page string="Cuestionario llave" name="cuestionario_llave">
                                 <field name="cuestionario_llave"/>
@@ -182,7 +164,7 @@
                                 <field name="citas"/>
                             </page>
                         </notebook>
-                    </sheet-->
+                    </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>
                         <field name="activity_ids"/>

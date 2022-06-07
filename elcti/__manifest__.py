@@ -18,6 +18,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/elcti_oportunidades.xml',
+        'views/elcti_calendario.xml',
         'views/crm_elcti.xml',
     ],
     # data files containing optionally loaded demonstration data

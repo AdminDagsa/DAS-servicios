@@ -27,6 +27,9 @@
             <field name="name">Calendario de citas</field>
             <field name="res_model">calendar.event</field>
             <field name="view_mode">calendar</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_calendario_calendar')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_calendario_form')})]"/>
         </record>
         <menuitem id="crm_medix_calendario" 
                   name="Calendario de citas"
