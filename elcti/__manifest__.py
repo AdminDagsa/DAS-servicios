@@ -17,8 +17,8 @@
     # data files always loaded at installation
     'data': [
         'security/ir.model.access.csv',
+        'views/elcti_oportunidades.xml',
         'views/crm_elcti.xml',
-        'views/crm_menu.xml',
     ],
     # data files containing optionally loaded demonstration data
     #'demo': [

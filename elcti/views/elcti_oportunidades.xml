@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- KANBAN -->
+        <record id="elcti_oportunidades_kanban" model="ir.ui.view">
+            <field name="name">elcti.oportunidades.kanban</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_content">
+                                <field name="name"/>
+                            </div>
+                            <!--div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle o-no-caret btn" 
+                                        role="button" 
+                                        data-toggle="dropdown" 
+                                        data-display="static" 
+                                        href="#" 
+                                        aria-label="Dropdown menu" 
+                                        title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable">
+                                            <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                                        </t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div class="o_kanban_record_title">
+                                        <strong><field name="name"/></strong>
+                                    </div>
+                                    <div class="o_kanban_record_subtitle">
+                                        <t t-if="record.expected_revenue.raw_value">
+                                            <field name="expected_revenue" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                            <span t-if="record.recurring_revenue and record.recurring_revenue.raw_value"> + </span>
+                                        </t>
+                                        <t t-if="record.recurring_revenue and record.recurring_revenue.raw_value">
+                                            <field name="recurring_revenue" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                            <field name="recurring_plan"/>
+                                        </t>
+                                    </div>
+                                    <div>
+                                        <span t-if="record.partner_id.value" t-esc="record.partner_id.value"/>
+                                    </div>
+                                    <div>
+                                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    </div>
+                                    <div class="o_kanban_record_bottom">
+                                        <div class="oe_kanban_bottom_left">
+                                            <field name="priority" widget="priority" groups="base.group_user"/>
+                                            <field name="activity_ids" widget="kanban_activity"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="user_id" widget="many2one_avatar_user"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div-->
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- FORMULARIO -->
+        <record id="elcti_oportunidades_form" model="ir.ui.view">
+            <field name="name">elcti.oportunidades.form</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <form class="o_lead_opportunity_form" js_class="crm_form">
+                    <header>
+                        <field name="stage_id"
+                            widget="statusbar"
+                            options="{'clickable': '1', 'fold_field': 'fold'}"
+                            domain="['|', ('team_id', '=', team_id), ('team_id', '=', False)]"
+                            attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}"/>
+                    </header>
+                    <!--div class="text-center alert alert-primary oe_edit_only" role="alert" attrs="{'invisible': ['|', ('ribbon_message', '=', False), ('ribbon_message', '=', '')]}">
+                        <field name="ribbon_message"/>
+                    </div-->
+                    <sheet>
+                        <field name="team_id" invisible="1"/>
+                        <field/>
+                    </sheet>
+                        <!--field name="stage_id" widget="statusbar"/-->
+                        <!--field name="stage_id"
+                            widget="statusbar"
+                            options="{'clickable': '1', 'fold_field': 'fold'}"
+                            domain="['|', ('team_id', '=', team_id), ('team_id', '=', False)]"
+                            attrs="{'invisible': ['|', ('active', '=', False), ('type', '=', 'lead')]}"/-->
+                    <!--/header-->
+                    
+                    <sheet>
+                        <field name="active" invisible="1"/>
+                        <div class="oe_button_box" name="button_box"-->
+                            <!--button name="683" type="action" class="oe_stat_button" icon="fa-calendar" domain="{'x_studio_paciente_crm','=', id}" attrs="{'invisible': [('type', '=', 'lead')]}">
+                                <div class="o_stat_info">
+                                    <field name="meeting_count" class="o_stat_value"/>
+                                    <span class="o_stat_text">Citas Médicas</span>
+                                </div>
+                            </button-->
+                        <!--/div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Paciente"/>
+                            <h1>
+                                <field name="name" placeholder="Nombre del paciente"/>
+                            </h1-->
+                            <!--h2 class="o_row no-gutters align-items-end">
+                            </h2-->
+                        <!--/div>
+                        <group>
+                            <group name="opportunity_partner" attrs="{'invisible': [('type', '=', 'lead')]}">
+                                <field name="nombres" string="Nombres"/>
+                                <field name="primer_apellido" string="Primer Apellido"/>
+                                <field name="segundo_apellido" string="Segundo Apellido"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Dirección" class="o_address_street"/>
+                                    <field name="country_id" placeholder="País" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                    <field name="state_id" class="o_address_state" placeholder="Estado" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                    <field name="ciudad" placeholder="Ciudad/Delegación" class="o_address_city" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                    <field name="city" placeholder="Municipio/Colonia" class="o_address_city"/>
+                                    <field name="zip" placeholder="C.P." class="o_address_zip"/>
+                                </div>
+                                <label for="email_from" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <button name="mail_action_blacklist_remove" class="fa fa-ban text-danger" title="This email is blacklisted for mass mailings. Click to unblacklist." type="object" context="{'default_email': email_from}" groups="base.group_user" attrs="{'invisible': [('is_blacklisted', '=', False)]}"/>
+                                    <field name="email_from" string="Email" widget="email"/>
+                                </div>
+                                <label for="phone" class="oe_inline"/>
+                                <div class="o_row o_row_readonly">
+                                    <button name="phone_action_blacklist_remove" class="fa fa-ban text-danger" title="This phone number is blacklisted for SMS Marketing. Click to unblacklist." type="object" context="{'default_phone': phone}" groups="base.group_user" attrs="{'invisible': [('phone_blacklisted', '=', False)]}"/>
+                                    <field name="phone" widget="phone"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="x_studio_etapa" string="etapa" attrs="{}" invisible="1"/>
+                                <field name="fecha_de_nacimiento" string="Fecha de nacimiento"/>
+                                <field name="edad" string="Edad"/>
+                                <field name="sexo"/>
+                                <field name="clasificacion_imc" string="Clasificacion IMC"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="llamada_contacto"/>
+                                <field name="acepta_politica"/>
+                            </group>
+                            <group>
+                                <label for="recordar_meses" string="Recordar en"/>
+                                    <div>
+                                        <field name="recordar_meses" string="Recordar en (meses)"/>
+                                        <span class="mx-1 clearfix">Meses</span>
+                                        <field name="recordar_semanas" string="Recordar en (semanas)"/>
+                                        <span class="mx-1 clearfix">Semanas</span>
+                                        <field name="recordar_dias" string="Recordar en (días)"/>
+                                        <span class="mx-1 clearfix">Días</span>
+                                        <field name="recordar_horas" string="Recordar en (horas)"/>
+                                        <span class="mx-1 clearfix">Horas</span>
+                                        <field name="recordar_minutos" string="Recordar en (minutos)" widget="integer"/>
+                                        <span class="mx-1 clearfix">Minutos</span>
+                                    </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Cuestionario llave" name="cuestionario_llave">
+                                <field name="cuestionario_llave"/>
+                            </page>
+                            <page string="Citas de consultorio" name="citas">
+                                <field name="citas"/>
+                            </page>
+                        </notebook>
+                    </sheet-->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
