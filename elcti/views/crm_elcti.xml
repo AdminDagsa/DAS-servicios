@@ -57,6 +57,7 @@
             <field name="name">Llamadas</field>
             <field name="res_model">x_llamadas</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('x_studio_contacto_crm', '!=', False)]</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>

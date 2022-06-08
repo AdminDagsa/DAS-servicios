@@ -8,8 +8,8 @@
             <field name="arch" type="xml">
                 <search string="Search Calls">
                     <!--field name="name" string="Meeting" filter_domain="[('name', 'ilike', self)]"/-->
-                    <!--field name="x_studio_contacto_crm"/-->
-                    <filter string="Contacto" help="Contacto" name="contacto" domain="[('x_studio_contacto_crm', '=', 'active_id')]"/>
+                    <field name="x_studio_contacto_crm"/>
+                    <!--filter string="Contacto" help="Contacto" name="contacto" domain="[('x_studio_contacto_crm', '=', 'active_id')]"/-->
                     <!--separator/>
                     <filter string="Date" name="filter_start_date" date="start"/>
                     <separator/>

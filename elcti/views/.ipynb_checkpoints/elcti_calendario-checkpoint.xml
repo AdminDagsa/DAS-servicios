@@ -40,7 +40,7 @@
                           hide_time="False">
                     <field name="attendee_status"/>
                     <!--field name="categ_ids" widget="many2many_tags" filters="1"/-->
-                    <!--field name="x_studio_sucursal" filters="1"/-->
+                    <field name="consultorio" filters="1"/>
                     <!--field name="x_studio_consultorio" filters="1"/-->
                     <!--field name="user_id" string="Responsible" widget="many2one_avatar_user"/-->
                     <!--field name="partner_ids" widget="many2many_tags_avatar" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_128"/-->

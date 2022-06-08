@@ -5,6 +5,7 @@ class Farmacovigilancia(models.Model):
     _name = "farmacovigilancia"
     _description = "Farmacovigilancia"
 
+    active = fields.Boolean('Activo', default=True)
     nombre = fields.Char('Nombre', index=True)
     celular_notificador = fields.Char('Celular')
     telefono_fijo = fields.Char('Teléfono fijo')

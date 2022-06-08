@@ -18,9 +18,47 @@
             <field name="model">recetas.medix</field>
             <field name="arch" type="xml">
                 <form>
-                    <sheet>
-                        <field name="id"/>
+                    <header/>
+                    <sheet string="Recetas">
+                        <widget name="web_ribbon" text="Archivado" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="active" invisible="1"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="id" required="1" placeholder="Name..."/>
+                            </h1>
+                        </div>
+                        <group name="studio_group_5b87c7">
+                            <group name="studio_group_5b87c7_left">
+                                <field name="contacto"/>
+                                <field name="edad"/>
+                            </group>
+                            <group name="studio_group_5b87c7_right">
+                                <label for="direccion" string="Dirección"/>
+                                <div class="o_address_format" name="studio_div_21859d">
+                                    <field name="direccion" string="Direccion" class="o_address_street" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                    <field name="pais" string="Pais" class="o_address_state" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                    <field name="estado" string="Estado" class="o_address_state" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" domain="[[&quot;country_id&quot;,&quot;=&quot;,pais]]"/>
+                                    <field name="ciudad" string="Ciudad" class="o_address_city" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" domain="[[&quot;state_id&quot;,&quot;=&quot;,estado]]"/>
+                                    <field name="colonia" string="Municipio/Colonia" class="o_address_state"/>
+                                    <field name="cp" string="CP" class="o_address_zip"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="lineas_receta">
+                                <tree editable="bottom">
+                                    <field name="producto"/>
+                                    <field name="cantidad"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="studio_group_Zst0i">
+                            <field name="diagnostico" string="Diagnóstico"/>
+                            <field name="indicaciones" string="Indicaciones generales"/>
+                            <!--field name="surtido" string="Surtido por"/-->
+                        </group>
                     </sheet>
+                    <!--div class="oe_chatter" name="oe_chatter"><field name="message_follower_ids"/><field name="message_ids"/><field name="activity_ids"/></div-->
                 </form>
             </field>
         </record>
