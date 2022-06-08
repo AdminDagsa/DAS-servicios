@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
 
-class CuestionarioLlave(models.Model):
+class LineasReceta(models.Model):
     _name = "lineas.recetas.medix"
     _description = "Lineas de receta"
     

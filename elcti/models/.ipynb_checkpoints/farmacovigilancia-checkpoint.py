@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
 
-class CuestionarioLlave(models.Model):
+class Farmacovigilancia(models.Model):
     _name = "farmacovigilancia"
     _description = "Farmacovigilancia"
 

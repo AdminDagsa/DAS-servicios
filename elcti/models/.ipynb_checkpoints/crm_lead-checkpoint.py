@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
+from datetime import datetime
+from datetime import date
 
 class ContactosCrm(models.Model):
     _inherit = 'crm.lead'
@@ -14,7 +16,8 @@ class ContactosCrm(models.Model):
     def _calcula_edad(self):
         for record in self:
             if record.fecha_de_nacimiento:
-                dias = int(str(datetime.date.today() - record.fecha_de_nacimiento).split(" ")[0])
+                #dias = int(str(datetime.date.today() - record.fecha_de_nacimiento).split(" ")[0])
+                dias = int(str(date.today() - record.fecha_de_nacimiento).split(" ")[0])
                 edad = int(dias/365)
                 record.edad = int((dias - (edad/4) + 1)/365)
             else:
@@ -43,6 +46,7 @@ class ContactosCrm(models.Model):
     cuestionario_llave = fields.One2many('cuestionario.llave', 'contacto', string="Cuestionario llave")
     clasificacion_imc = fields.Selection('Clasificacion IMC', related="cuestionario_llave.clasificacion")
     citas = fields.One2many('calendar.event', 'contacto', string="Citas programadas")
+    #llamadas = fields.One2many('x_llamadas', 'x_studio_contacto_crm', string="Llamadas")
     ciudad = fields.Many2one('res.city', string="Ciudad")
     #llamada_contacto = fields.Many2one('llamada.contacto', string="Llamada de contacto")
     llamada_contacto = fields.Selection([
@@ -53,9 +57,10 @@ class ContactosCrm(models.Model):
         ('5', '5to contacto')],
         string='Llamada de contacto')
     #motivo_cancelacion = fields.Many2one('motivos.cancelacion', string="Motivos de cancelación")
-    conteo_llamadas = fields.Integer('Conteo de llamadas', compute="_conteo_llamadas")
-    def _conteo_llamadas(self):
+    conteo_llamadas = fields.Integer('Conteo de llamadas')#, compute="_conteo_llamadas")
+    """def _conteo_llamadas(self):
         results = self.env['x_llamadas'].read_group([('x_studio_contacto_crm', 'in', self.ids)], ['x_studio_contacto_crm'], ['x_studio_contacto_crm'])
         dic = {}
         for x in results: dic[x['x_studio_contacto_crm'][0]] = x['x_studio_contacto_crm_count']
         for record in self: record['conteo_llamadas'] = dic.get(record.id, 0)
+    """
