@@ -6,8 +6,18 @@
             <field name="name">elcti.oportunidades.kanban</field>
             <field name="model">crm.lead</field>
             <field name="arch" type="xml">
-                <kanban>
+                <kanban
+                        create="false"
+                        default_group_by="etapa"
+                        class="o_kanban_small_column o_opportunity_kanban"
+                        group_create="false"
+                        group_delete="false"
+                        group_edit="false"
+                        quick_create="false"
+                        records_draggable="false"
+                        archivable="false">
                     <field name="name"/>
+                    <field name="etapa" invisible="1"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_content oe_kanban_global_click">
@@ -79,9 +89,9 @@
             <field name="name">elcti.oportunidades.form</field>
             <field name="model">crm.lead</field>
             <field name="arch" type="xml">
-                <form class="o_lead_opportunity_form" js_class="crm_form">
+                <form class="o_lead_opportunity_form" js_class="crm_form" create="false">
                     <header>
-                        <field name="stage_id" widget="statusbar" clickable="1"/>
+                        <field name="stage_id" widget="statusbar" clickable="1" domain="[('id', 'not in', [1,2,3,4])]"/>
                     </header>
                     <sheet>
                         <field name="team_id" invisible="1"/>
@@ -91,7 +101,7 @@
                         <field name="phone_blacklisted" invisible="1"/>
                         <!-- BOTONES -->
                         <div class="oe_button_box" name="button_box">
-                            <button name="%(crm_medix_calendario)d"
+                            <button name="%(crm_medix_calendario_contacto)d"
                             type="action"
                             class="oe_stat_button"
                             icon="fa-calendar">
@@ -100,7 +110,7 @@
                                     <span class="o_stat_text">Citas Médicas</span>
                                 </div>
                             </button>
-                            <button name="%(crm_medix_llamadas)d"
+                            <button name="%(crm_medix_llamadas_contacto)d"
                             type="action"
                             class="oe_stat_button"
                             icon="fa-phone">
@@ -179,6 +189,9 @@
                             </page>
                             <page string="Citas de consultorio" name="citas">
                                 <field name="citas"/>
+                            </page>
+                            <page string="Llamadas" name="llamadas">
+                                <field name="llamadas"/>
                             </page>
                         </notebook>
                     </sheet>

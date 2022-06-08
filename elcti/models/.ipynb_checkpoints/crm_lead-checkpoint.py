@@ -2,10 +2,15 @@
 from odoo import fields, models, api
 from datetime import datetime
 from datetime import date
+from datetime import timedelta
 
 class ContactosCrm(models.Model):
     _inherit = 'crm.lead'
 
+    etapa = fields.Char('Etapa', index=True, compute="_nombra_etapa")
+    def _nombra_etapa(self):
+        for record in self:
+            record.etapa = stage_id.name
     acepta_politica = fields.Boolean('Acepta politica de manejo de información personal', default=False, tracking=True)
     nombres = fields.Char('Nombre', index=True, tracking=True)
     primer_apellido = fields.Char('Primer apellido', index=True, tracking=True)
@@ -31,8 +36,8 @@ class ContactosCrm(models.Model):
     @api.depends("recordar_meses", "recordar_semanas", "recordar_dias", "recordar_horas", "recordar_minutos")
     def _calcula_recordatorio(self):
         for record in self:
-            mes = int(str(datetime.datetime.now()).split("-")[1]) + record.recordar_meses
-            record.recordatorio_llamada = datetime.datetime.strptime(str(datetime.datetime.now() + datetime.timedelta(weeks=record.recordar_semanas,days=record.recordar_dias,hours=record.recordar_horas,minutes=record.recordar_minutos)).split("-")[0]+"-"+str(mes)+"-"+str(datetime.datetime.now() + datetime.timedelta(weeks=record.recordar_semanas,days=record.recordar_dias,hours=record.recordar_horas,minutes=record.recordar_minutos)).split("-")[2].split(".")[0], '%Y-%m-%d %H:%M:%S')
+            mes = int(str(datetime.now()).split("-")[1]) + record.recordar_meses
+            record.recordatorio_llamada = datetime.strptime(str(datetime.now() + timedelta(weeks=record.recordar_semanas,days=record.recordar_dias,hours=record.recordar_horas,minutes=record.recordar_minutos)).split("-")[0]+"-"+str(mes)+"-"+str(datetime.now() + timedelta(weeks=record.recordar_semanas,days=record.recordar_dias,hours=record.recordar_horas,minutes=record.recordar_minutos)).split("-")[2].split(".")[0], '%Y-%m-%d %H:%M:%S')
             #record["description"] = str(datetime.datetime.now() + datetime.timedelta(weeks=record.x_studio_recordar_en_semanas,days=record.x_studio_recordar_en_dias,hours=record.x_studio_recordar_en_horas,minutes=record.x_studio_retraso)).split("-")[2].split(".")[0]
             """
             dias = int(str(datetime.date.today() - record.x_studio_fecha_de_nacimiento).split(" ")[0])
@@ -46,7 +51,7 @@ class ContactosCrm(models.Model):
     cuestionario_llave = fields.One2many('cuestionario.llave', 'contacto', string="Cuestionario llave")
     clasificacion_imc = fields.Selection('Clasificacion IMC', related="cuestionario_llave.clasificacion")
     citas = fields.One2many('calendar.event', 'contacto', string="Citas programadas")
-    #llamadas = fields.One2many('x_llamadas', 'x_studio_contacto_crm', string="Llamadas")
+    llamadas = fields.One2many('x_llamadas', 'x_studio_contacto_crm', string="Llamadas")
     ciudad = fields.Many2one('res.city', string="Ciudad")
     #llamada_contacto = fields.Many2one('llamada.contacto', string="Llamada de contacto")
     llamada_contacto = fields.Selection([

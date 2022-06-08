@@ -26,9 +26,22 @@
         <record id="crm_medix_calendario" model="ir.actions.act_window">
             <field name="name">Calendario de citas</field>
             <field name="res_model">calendar.event</field>
-            <field name="view_mode">calendar,form</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="search_view_id" ref="elcti_calendario_search"/>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_calendario_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_calendario_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_calendario_form')})]"/>
+        </record>
+        <record id="crm_medix_calendario_contacto" model="ir.actions.act_window">
+            <field name="name">Calendario de citas</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="search_view_id" ref="elcti_calendario_search"/>
+            <field name="context">{'search_default_contacto': [active_id], 'default_contacto': active_id}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_calendario_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_calendario_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_calendario_form')})]"/>
         </record>
         <menuitem id="crm_medix_calendario_menu" 
@@ -42,6 +55,16 @@
             <field name="name">Llamadas</field>
             <field name="res_model">x_llamadas</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>
+        </record>
+        <record id="crm_medix_llamadas_contacto" model="ir.actions.act_window">
+            <field name="name">Llamadas</field>
+            <field name="res_model">x_llamadas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="elcti_llamadas_search"/>
+            <field name="context">{'search_default_x_studio_contacto_crm': [active_id], 'default_x_studio_contacto_crm': active_id}</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>

@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- busqueda -->
+        <record id="elcti_llamadas_search" model="ir.ui.view">
+            <field name="name">elcti.llamadas.search</field>
+            <field name="model">x_llamadas</field>
+            <field name="arch" type="xml">
+                <search string="Search Calls">
+                    <!--field name="name" string="Meeting" filter_domain="[('name', 'ilike', self)]"/-->
+                    <!--field name="x_studio_contacto_crm"/-->
+                    <filter string="Contacto" help="Contacto" name="contacto" domain="[('x_studio_contacto_crm', '=', 'active_id')]"/>
+                    <!--separator/>
+                    <filter string="Date" name="filter_start_date" date="start"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Responsible" name="responsible" domain="[]" context="{'group_by': 'user_id'}"/>
+                        <filter string="Availability" name="availability" domain="[]" context="{'group_by': 'show_as'}"/>
+                    </group-->
+                </search>
+            </field>
+        </record>
+        
         <!-- TREE -->
         <record id="elcti_llamadas_tree" model="ir.ui.view">
             <field name="name">elcti.llamadas.tree</field>
@@ -8,6 +29,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="x_name" string="Llamada"/>
+                    <field name="x_studio_contacto_crm"/>
                     <field name="x_studio_resumen"/>
                     <field name="x_studio_inicio_llamada"/>
                     <field name="x_studio_fin_llamada"/>
@@ -72,7 +94,7 @@
                                 </div>
                                 <group name="Contacto" string="Contacto">
                                     <group name="studio_group_0aa46e_left">
-                                        <!--field name="x_studio_contacto_crm"/-->
+                                        <field name="x_studio_contacto_crm"/>
                                     </group>
                                     <group name="studio_group_0aa46e_right">
                                     </group>

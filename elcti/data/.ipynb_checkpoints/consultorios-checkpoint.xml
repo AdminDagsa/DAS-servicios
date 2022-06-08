@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- consultorios -->
+        <record id="c1" model="calendar.event.type">
+            <field name="name">Consultorio 1</field>
+        </record>
+        <record id="c2" model="calendar.event.type">
+            <field name="name">Consultorio 2</field>
+        </record>
+    </data>
+</odoo>

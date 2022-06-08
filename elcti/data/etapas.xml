@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Etapas CRM -->
+        <record id="lead" model="crm.stage">
+            <field name="name">LEADS</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="apto" model="crm.stage">
+            <field name="name">Apto</field>
+            <field name="sequence">101</field>
+        </record>
+        <record id="noapto" model="crm.stage">
+            <field name="name">No apto</field>
+            <field name="sequence">102</field>
+        </record>
+        <record id="nolocalizable" model="crm.stage">
+            <field name="name">No localizable</field>
+            <field name="sequence">103</field>
+        </record>
+        <record id="contactar" model="crm.stage">
+            <field name="name">Por contactar</field>
+            <field name="sequence">104</field>
+        </record>
+        <record id="seguimiento" model="crm.stage">
+            <field name="name">En seguimiento</field>
+            <field name="sequence">105</field>
+        </record>        
+    </data>
+</odoo>

@@ -2,6 +2,6 @@
 from odoo import fields, models, api
 
 class LlamadasMedix(models.Model):
-    _inherit = 'x_llamadas'
+    _inherit = "%(x_llamadas)d"
     
     contacto = fields.Many2one('crm.lead', string='Contacto', index=True)

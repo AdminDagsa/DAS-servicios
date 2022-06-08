@@ -7,7 +7,10 @@
         'contacts',
         'crm',
         'calendar',
-        'stock'
+        'stock',
+        #'studio_customization',
+        #'web_studio',
+        #'x_llamadas',
     ],
     'author': "Gustavo Torres",
     'category': 'Customizations',
@@ -17,6 +20,8 @@
     # data files always loaded at installation
     'data': [
         'security/ir.model.access.csv',
+        'data/etapas.xml',
+        'data/consultorios.xml',
         'views/elcti_calendario.xml',
         'views/elcti_recetas.xml',
         'views/elcti_farmacovigilancia.xml',
