@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="elcti_recetas_tree" model="ir.ui.view">
+            <field name="name">elcti.recetas.tree</field>
+            <field name="model">recetas.medix</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="elcti_recetas_form" model="ir.ui.view">
+            <field name="name">elcti.recetas.form</field>
+            <field name="model">recetas.medix</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="id"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

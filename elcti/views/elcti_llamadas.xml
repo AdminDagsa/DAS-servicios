@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="elcti_llamadas_tree" model="ir.ui.view">
+            <field name="name">elcti.llamadas.tree</field>
+            <field name="model">x_llamadas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="x_name" string="Llamada"/>
+                    <field name="x_studio_resumen"/>
+                    <field name="x_studio_inicio_llamada"/>
+                    <field name="x_studio_fin_llamada"/>
+                    <field name="x_studio_duracion"/>
+                    <field name="x_studio_codigo_de_cierre"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="elcti_llamadas_form" model="ir.ui.view">
+            <field name="name">elcti.llamadas.form</field>
+            <field name="model">x_llamadas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header attrs="{&quot;invisible&quot;: [&quot;|&quot;,[&quot;x_studio_inicio_llamada&quot;,&quot;=&quot;,False],[&quot;x_studio_fin_llamada&quot;,&quot;!=&quot;,False]]}">
+                        <!--button string="Finalizar llamada" name="608" type="action" class="btn-primary" studio_approval="False"/-->
+                        <button string="Finalizar llamada" class="btn-primary"/>
+                    </header>
+                    <div style="height: 95%" attrs="{'invisible': [('x_studio_inicio_llamada', '!=', False)]}">
+                        <div name="Interaccion" class="d-flex align-items-center justify-content-center text-center container bg-dark p-4 shadow my-3 border h-100">
+                            <sheet name="Formulario" string="Formulario">
+                                <div class="o_horizontal_separator d-flex justify-content-around" name="studio_div_c65714">Inicio de interacción</div>
+                                <button string="Llamada entrante" name="607" type="action" class="btn-success rounded-pill btn-lg mx-1" studio_approval="False">
+                                    <i class="px-1 fa fa-sign-in text-dark"/>
+                                </button>
+                                <button string="Llamada saliente" name="629" type="action" class="btn-warning rounded-pill btn-lg mx-1 text-light" studio_approval="False">
+                                    <i class="px-1 fa fa-sign-out text-dark"/>
+                                </button>
+                                <!--
+                                <a name="607" type="action" class="btn btn-success rounded-pill btn-lg mx-1"><i class="fa fa-sign-in text-dark"/> Llamada entrante</a><a name="607" type="action" class="btn btn-warning rounded-pill btn-lg mx-1"><i class="fa fa-sign-out text-dark"/> Llamada saliente</a>
+                                -->
+                            </sheet>
+                        </div>
+                    </div>
+                    <div class="sticky-top" attrs="{'invisible': [('x_studio_inicio_llamada', '=', False)]}">
+                        <div name="fin_llamada" class="container table-dark px-4 shadow">
+                            <sheet name="fin_llamada">
+                                <group name="fin_llamada" string="Código de cierre" class="btn-group" col="3">
+                                    <button string="Resuelto" name="647" type="action" class="btn-success rounded-pill btn-sm mx-1" studio_approval="False">
+                                        <i class="px-1 fa fa-check"/>
+                                    </button>
+                                    <button string="Sin resolver" name="648" type="action" class="btn-warning rounded-pill btn-sm mx-1 text-light" studio_approval="False">
+                                        <i class="px-1 fa fa-times"/>
+                                    </button>
+                                    <button string="Otros" name="646" type="action" class="btn-info rounded-pill btn-sm mx-1 text-light" studio_approval="False">
+                                        <i class="px-1 fa fa-bars"/>
+                                    </button>
+                                </group>
+                            </sheet>
+                        </div>
+                    </div>
+                    <div attrs="{'invisible': [('x_studio_inicio_llamada', '=', False)]}">
+                        <div name="Llamadas" class="container bg-light p-4 shadow my-3 border">
+                            <sheet name="Llamadas" string="Llamadas">
+                                <div class="oe_title">
+                                    <h1>
+                                        <field name="x_name" required="0" placeholder="Name..." attrs="{&quot;invisible&quot;: 1}"/>
+                                    </h1>
+                                </div>
+                                <group name="Contacto" string="Contacto">
+                                    <group name="studio_group_0aa46e_left">
+                                        <!--field name="x_studio_contacto_crm"/-->
+                                    </group>
+                                    <group name="studio_group_0aa46e_right">
+                                    </group>
+                                </group>
+                                <group name="Interaccion" string="Registro de interacción">
+                                    <group name="studio_group_7385be">
+                                        <field name="x_studio_direccion_de_llamada" string="Dirección de llamada" widget="radio" options="{&quot;horizontal&quot;:true}" force_save="True" attrs="{}" readonly="1"/>
+
+                                        <field name="x_studio_codigo_de_cierre" string="Código de cierre"/>
+                                    </group>
+                                    <group name="studio_group_3d5e4f">
+                                       <field name="x_studio_inicio_llamada" string="Inicio llamada" force_save="True" attrs="{}" readonly="1"/>
+                                        <field name="x_studio_fin_llamada" string="Fin llamada" force_save="True" attrs="{}" readonly="1"/>
+                                        <field name="x_studio_duracion" string="Duración"/>
+                                    </group>
+                                </group>
+
+                                <group name="studio_group_ce8fa8">
+                                    <field name="x_studio_resumen" string="Resumen"/>
+                                    <field name="x_studio_comentarios" string="Descripción"/>
+                                    <field name="x_studio_sintomas" string="Síntomas"/>
+                                    <field name="x_studio_condicion_diagnostica" string="Condición diagnóstica"/>
+                                </group>
+                            </sheet>
+                        </div>
+                        <div class="container bg-info p-4 shadow border border-primary" name="studio_div_122b10">
+                            <sheet name="studio_group_registro_llamada" string="Registro de llamadas">
+                                <div class="o_horizontal_separator" name="studio_div_d8d7e2">Registro de llamadas</div>
+                                <!--field name="x_studio_llamadas_crm"/-->
+                            </sheet>
+                        </div>
+                    </div>
+                    <div class="oe_chatter" name="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                        <field name="activity_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

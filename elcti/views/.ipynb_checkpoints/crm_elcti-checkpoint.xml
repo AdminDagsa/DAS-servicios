@@ -16,7 +16,7 @@
                                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('elcti_oportunidades_kanban')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_oportunidades_form')})]"/>
         </record>
-        <menuitem id="crm_medix_menu_oportunidades"
+        <menuitem id="crm_medix_oportunidades_menu"
                   name="Oportunidades"
                   parent="crm_medix_root"
                   action="crm_medix_oportunidades"
@@ -26,12 +26,12 @@
         <record id="crm_medix_calendario" model="ir.actions.act_window">
             <field name="name">Calendario de citas</field>
             <field name="res_model">calendar.event</field>
-            <field name="view_mode">calendar</field>
+            <field name="view_mode">calendar,form</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_calendario_calendar')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_calendario_form')})]"/>
         </record>
-        <menuitem id="crm_medix_calendario" 
+        <menuitem id="crm_medix_calendario_menu" 
                   name="Calendario de citas"
                   parent="crm_medix_root" 
                   action="crm_medix_calendario" 
@@ -42,8 +42,11 @@
             <field name="name">Llamadas</field>
             <field name="res_model">x_llamadas</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>
         </record>
-        <menuitem id="crm_medix_llamadas"
+        <menuitem id="crm_medix_llamadas_menu"
                   name="Llamadas"
                   parent="crm_medix_root"
                   action="crm_medix_llamadas"
@@ -54,8 +57,11 @@
             <field name="name">Recetas</field>
             <field name="res_model">recetas.medix</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_recetas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_recetas_form')})]"/>
         </record>
-        <menuitem id="crm_medix_recetas"
+        <menuitem id="crm_medix_recetas_menu"
                   name="Recetas"
                   parent="crm_medix_root"
                   action="crm_medix_recetas"
@@ -66,15 +72,18 @@
             <field name="name">Farmacovigilancia</field>
             <field name="res_model">farmacovigilancia</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_farmacovigilancia_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_farmacovigilancia_form')})]"/>
         </record>
-        <menuitem id="crm_medix_farmacovigilacia"
+        <menuitem id="crm_medix_farmacovigilacia_menu"
                   name="Farmacovigilancia"
                   parent="crm_medix_root"
                   action="crm_medix_farmacovigilacia"
                   sequence="6"/>
 
         <!-- AJUSTES -->
-        <menuitem id="crm_medix_ajustes"
+        <menuitem id="crm_medix_ajustes_menu"
                   name="Ajustes"
                   parent="crm_medix_root"
                   sequence="7"/>
@@ -84,10 +93,13 @@
             <field name="name">Cuestionario llave</field>
             <field name="res_model">cuestionario.llave</field>
             <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_cuestionario_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_cuestionario_form')})]"/>
         </record>
-        <menuitem id="crm_medix_cuestionario_llave"
+        <menuitem id="crm_medix_cuestionario_llave_menu"
                   name="Cuestionario llave"
-                  parent="crm_medix_ajustes"
+                  parent="crm_medix_ajustes_menu"
                   action="crm_medix_cuestionario_llave"
                   sequence="8"/>
     </data>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="elcti_cuestionario_tree" model="ir.ui.view">
+            <field name="name">elcti.cuestionario.tree</field>
+            <field name="model">cuestionario.llave</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="elcti_cuestionario_form" model="ir.ui.view">
+            <field name="name">elcti.cuestionario.form</field>
+            <field name="model">cuestionario.llave</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="id"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

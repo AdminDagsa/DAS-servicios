@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TREE -->
+        <record id="elcti_farmacovigilancia_tree" model="ir.ui.view">
+            <field name="name">elcti.farmacovigilancia.tree</field>
+            <field name="model">farmacovigilancia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="elcti_farmacovigilancia_form" model="ir.ui.view">
+            <field name="name">elcti.farmacovigilancia.form</field>
+            <field name="model">farmacovigilancia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="id"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

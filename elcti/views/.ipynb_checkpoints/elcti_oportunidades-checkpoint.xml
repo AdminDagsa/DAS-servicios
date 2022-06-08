@@ -81,28 +81,45 @@
             <field name="arch" type="xml">
                 <form class="o_lead_opportunity_form" js_class="crm_form">
                     <header>
-                        <field name="stage_id"
-                            widget="statusbar"
-                            clickable="1"/>
+                        <field name="stage_id" widget="statusbar" clickable="1"/>
                     </header>
-                    <!--div class="text-center alert alert-primary oe_edit_only" role="alert" attrs="{'invisible': ['|', ('ribbon_message', '=', False), ('ribbon_message', '=', '')]}">
-                        <field name="ribbon_message"/>
-                    </div-->
+                    <!--div class="text-center alert alert-primary oe_edit_only" role="alert" attrs="{'invisible': ['|', ('ribbon_message', '=', False), ('ribbon_message', '=', '')]}"><field name="ribbon_message"/></div-->
                     <sheet>
-                        <!--field name="team_id" invisible="1"/>
+                        <field name="team_id" invisible="1"/>
                         <field name="active" invisible="1"/>
                         <field name="type" invisible="1"/>
                         <field name="is_blacklisted" invisible="1"/>
                         <field name="phone_blacklisted" invisible="1"/>
+                        <!-- BOTONES -->
+                        <!--div class="oe_button_box" name="button_box">
+                            <button name="706"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-calendar">
+                                <div class="o_stat_info">
+                                    <field name="meeting_count" class="o_stat_value"/>
+                                    <span class="o_stat_text">Citas Médicas</span>
+                                </div>
+                            </button>
+                            <button name="707"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-phone">
+                                <div class="o_stat_info">
+                                    <field name="conteo_llamadas" class="o_stat_value"/>
+                                    <span class="o_stat_text">Llamadas</span>
+                                </div>
+                            </button-->
+                            <!--button type="action" name="671" class="oe_stat_button" icon="fa-phone" context="{'partner_id': partner_id}" attrs="{'invisible': [('type', '=', 'lead')]}"><span class="o_stat_text">Ola k ase</span></button-->
+                        <!--/div>
                         <div class="oe_title">
                             <label for="name" class="oe_edit_only" string="Paciente"/>
                             <h1>
                                 <field name="name" placeholder="Nombre del paciente"/>
                             </h1-->
-                            <!--h2 class="o_row no-gutters align-items-end">
-                            </h2-->
-                        <!--/div-->
-                        <!--group>
+                            <!--h2 class="o_row no-gutters align-items-end"></h2-->
+                        <!--/div>
+                        <group>
                             <group>
                                 <field name="nombres" string="Nombres"/>
                                 <field name="primer_apellido" string="Primer Apellido"/>
@@ -131,31 +148,32 @@
                                 <!--field name="x_studio_etapa" string="etapa" attrs="{}" invisible="1"/-->
                                 <!--field name="fecha_de_nacimiento" string="Fecha de nacimiento"/>
                                 <field name="edad" string="Edad"/>
-                                <field name="sexo"/>
+                                <field name="sexo" widget="statusbar" clickable="1"/>
                                 <field name="clasificacion_imc" string="Clasificacion IMC"/>
                             </group>
-                        </group-->
-                        <!--group>
-                            <group>
-                                <field name="llamada_contacto" widget="statusbar" clickable="1" style="display: flex; flex-direction: column-reverse"/>
-                                <field name="acepta_politica"/>
+                        </group>
+                        <group>
+                            <group-->
+                                <!--field name="llamada_contacto" widget="statusbar" clickable="1" style="display: flex; flex-direction: column-reverse"/-->
+                                <!--field name="llamada_contacto"/-->
+                                <!--field name="acepta_politica"/>
                             </group>
                             <group>
                                 <label for="recordar_meses" string="Recordar en"/>
-                                    <div>
-                                        <field name="recordar_meses" string="Recordar en (meses)"/>
-                                        <span class="mx-1 clearfix">Meses</span>
-                                        <field name="recordar_semanas" string="Recordar en (semanas)"/>
-                                        <span class="mx-1 clearfix">Semanas</span>
-                                        <field name="recordar_dias" string="Recordar en (días)"/>
-                                        <span class="mx-1 clearfix">Días</span>
-                                        <field name="recordar_horas" string="Recordar en (horas)"/>
-                                        <span class="mx-1 clearfix">Horas</span>
-                                        <field name="recordar_minutos" string="Recordar en (minutos)" widget="integer"/>
-                                        <span class="mx-1 clearfix">Minutos</span>
-                                    </div>
+                                <div>
+                                    <field name="recordar_meses" string="Recordar en (meses)"/>
+                                    <span class="mx-1 clearfix">Meses</span>
+                                    <field name="recordar_semanas" string="Recordar en (semanas)"/>
+                                    <span class="mx-1 clearfix">Semanas</span>
+                                    <field name="recordar_dias" string="Recordar en (días)"/>
+                                    <span class="mx-1 clearfix">Días</span>
+                                    <field name="recordar_horas" string="Recordar en (horas)"/>
+                                    <span class="mx-1 clearfix">Horas</span>
+                                    <field name="recordar_minutos" string="Recordar en (minutos)" widget="integer"/>
+                                    <span class="mx-1 clearfix">Minutos</span>
+                                </div>
                             </group>
-                        </group-->
+                        </group>
                         <notebook>
                             <page string="Cuestionario llave" name="cuestionario_llave">
                                 <field name="cuestionario_llave"/>
@@ -163,7 +181,7 @@
                             <page string="Citas de consultorio" name="citas">
                                 <field name="citas"/>
                             </page>
-                        </notebook>
+                        </notebook-->
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>

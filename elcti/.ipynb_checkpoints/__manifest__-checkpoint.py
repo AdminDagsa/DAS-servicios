@@ -19,6 +19,10 @@
         'security/ir.model.access.csv',
         'views/elcti_oportunidades.xml',
         'views/elcti_calendario.xml',
+        'views/elcti_llamadas.xml',
+        'views/elcti_recetas.xml',
+        'views/elcti_farmacovigilancia.xml',
+        'views/elcti_cuestionario.xml',
         'views/crm_elcti.xml',
     ],
     # data files containing optionally loaded demonstration data

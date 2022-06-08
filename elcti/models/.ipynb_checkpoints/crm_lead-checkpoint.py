@@ -44,19 +44,18 @@ class ContactosCrm(models.Model):
     clasificacion_imc = fields.Selection('Clasificacion IMC', related="cuestionario_llave.clasificacion")
     citas = fields.One2many('calendar.event', 'contacto', string="Citas programadas")
     ciudad = fields.Many2one('res.city', string="Ciudad")
-    #contacto = fields.Many2one('llamada.contacto', string="Llamada de contacto")
+    #llamada_contacto = fields.Many2one('llamada.contacto', string="Llamada de contacto")
     llamada_contacto = fields.Selection([
-        ('1','1er contacto'),
-        ('2','2do contacto'),
-        ('3','3er contacto'),
-        ('4''4to contacto'),
-        ('5','5to contacto')],
-        string="Llamada de contacto"
-    )
+        ('1', '1er contacto'),
+        ('2', '2do contacto'),
+        ('3', '3er contacto'),
+        ('4', '4to contacto'),
+        ('5', '5to contacto')],
+        string='Llamada de contacto')
     #motivo_cancelacion = fields.Many2one('motivos.cancelacion', string="Motivos de cancelación")
-    #conteo_llamadas = fields.Integer('Conteo de llamadas', compute="_conteo_llamadas")
-    #def _conteo_llamadas(self):
-        #results = self.env['x_llamadas'].read_group([('x_studio_contacto_crm', 'in', self.ids)], ['x_studio_contacto_crm'], ['x_studio_contacto_crm'])
-        #dic = {}
-        #for x in results: dic[x['x_studio_contacto_crm'][0]] = x['x_studio_contacto_crm_count']
-        #for record in self: record['conteo_llamadas'] = dic.get(record.id, 0)
+    conteo_llamadas = fields.Integer('Conteo de llamadas', compute="_conteo_llamadas")
+    def _conteo_llamadas(self):
+        results = self.env['x_llamadas'].read_group([('x_studio_contacto_crm', 'in', self.ids)], ['x_studio_contacto_crm'], ['x_studio_contacto_crm'])
+        dic = {}
+        for x in results: dic[x['x_studio_contacto_crm'][0]] = x['x_studio_contacto_crm_count']
+        for record in self: record['conteo_llamadas'] = dic.get(record.id, 0)

@@ -33,7 +33,7 @@
             </field>
         </record>
         
-        <!-- CALENDARIO -->
+        <!-- FORMULARIO -->
         <record id="elcti_calendario_form" model="ir.ui.view">
             <field name="name">elcti.calendario.form</field>
             <field name="model">calendar.event</field>
