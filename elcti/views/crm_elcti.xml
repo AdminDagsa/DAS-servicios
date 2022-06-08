@@ -28,6 +28,7 @@
             <field name="res_model">calendar.event</field>
             <field name="view_mode">calendar,tree,form</field>
             <field name="search_view_id" ref="elcti_calendario_search"/>
+            <field name="context">{'default_allday': False, 'allday':False, 'default_duration': 1, 'duration':1}</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_calendario_calendar')}),
                                          (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_calendario_tree')}),
@@ -37,6 +38,7 @@
             <field name="name">Calendario de citas</field>
             <field name="res_model">calendar.event</field>
             <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="elcti_oportunidades_form"/>
             <field name="search_view_id" ref="elcti_calendario_search"/>
             <field name="context">{'search_default_contacto': [active_id], 'default_contacto': active_id}</field>
             <field name="view_ids" eval="[(5, 0, 0),

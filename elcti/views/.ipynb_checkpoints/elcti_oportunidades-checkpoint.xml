@@ -25,6 +25,8 @@
                                     <strong><field name="name"/></strong>
                                 </div>
                             </div>
+                            <div class="oe_clear"/>
+                            
                             <!--div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click">
                                 <div class="o_dropdown_kanban dropdown">
                                     <a class="dropdown-toggle o-no-caret btn" 

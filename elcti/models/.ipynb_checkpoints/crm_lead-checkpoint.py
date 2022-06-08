@@ -7,10 +7,7 @@ from datetime import timedelta
 class ContactosCrm(models.Model):
     _inherit = 'crm.lead'
 
-    etapa = fields.Char('Etapa', index=True, compute="_nombra_etapa")
-    def _nombra_etapa(self):
-        for record in self:
-            record.etapa = stage_id.name
+    etapa = fields.Char('Etapa', store=True, related="stage_id.name")
     acepta_politica = fields.Boolean('Acepta politica de manejo de información personal', default=False, tracking=True)
     nombres = fields.Char('Nombre', index=True, tracking=True)
     primer_apellido = fields.Char('Primer apellido', index=True, tracking=True)
