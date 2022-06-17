@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="elcti_cuestionario_tree" model="ir.ui.view">
+            <field name="name">elcti.cuestionario.tree</field>
+            <field name="model">cuestionario.llave</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="contacto"/>
+                    <field name="peso"/>
+                    <field name="talla"/>
+                    <field name="imc"/>
+                    <field name="clasificacion"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_cuestionario_form" model="ir.ui.view">
+            <field name="name">elcti.cuestionario.form</field>
+            <field name="model">cuestionario.llave</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!--field name="x_name" invisible="1"/-->
+                        <group col="1">
+                            <field name="contacto"/>
+                            <field name="nombre"/>
+                            <field name="rango_edad" string="1. ¿Es usted mayor de 18 años y menor de 65 años?"/>
+                            <field name="lactancia" string="2. ¿Está usted embarazada o en periodo de lactancia?"/>
+                            <field name="conoce_peso_talla" string="3. ¿Conoce su peso y talla?*"/>
+                            <div>
+                                <p class="oe_grey">* Si no lo conoce, solicitar un estimado</p>
+                            </div>
+                            <field name="peso" string="Peso (Kg)"/>
+                            <field name="talla" string="Altura (m)"/>
+                            <field name="diabetes" string="4. ¿Le han diagnosticado con diabetes?"/>
+                            <field name="hipertension" string="5. ¿Le han diagnosticado con hipertensión?"/>
+                            <field name="contraindicaciones_anfepramona_y_mazindol" string="6. ¿Le han diagnosticado con hipertiroidismo, glaucoma, ateroesclerosis avanzada, enfermedad cardiovascular, insuficiencia cardíaca severa o arritmia?"/>
+                            <field name="enfermedad_renal_severa" string="7. ¿Le han diagnosticado con enfermedad renal severa?"/>
+                            <field name="insuficiencia_hepatica_severa" string="8. ¿Le han diagnosticado con insuficiencia hepática severa?"/>
+                            <field name="inhibidores_o_bloqueadores" string="9. ¿Actualmente está en tratamiento con inhibidores de la monoaminoxidasa (IMAO), bloqueadores ganglionares o neurales?"/>
+                            <field name="medicamento_baja_peso" string="10. ¿Ha estado en tratamiento con medicamentos para bajar de peso o supresores del apetito?"/>
+                            <field name="medicamento_y_adversidad" string="11. En caso de responder sí a la pregunta anterior: ¿recuerda qué medicamento fue y si tuvo algún evento adverso?"/>
+                            <field name="agitacion_tpm_insomnio" string="12. ¿Le han diagnosticado con algún trastorno psiquiátrico relacionado con estados de agitación, trastorno de personalidad múltiple o insomnio crónico?"/>
+                            <field name="abuso_substancias" string="13. ¿Tiene antecedente de abuso de sustancias (alcohol, drogas o cualquier otro medicamento)?"/>
+                            <field name="contraindicacion_neobes_hombre" string="14a. En caso de ser hombre: ¿Le han diagnosticado hipertrofia prostática benigna o cualquier padecimiento obstructivo de las vías urinarias o tracto gastrointestinal?"/>
+                            <field name="contraindicacion_neobes_mujer" string="14b. En caso de ser mujer: ¿Le han algún padecimiento obstructivo de las vías urinarias o tracto gastrointestinal?"/>
+                            <field name="estudios_recientes" string="15. ¿Se ha realizado estudios de laboratorio y/o gabinete en los últimos 30 días? En caso afirmativo ¿cuáles y por qué se los indicaron?"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="elcti_cuestionario_vista" model="ir.actions.act_window">
+            <field name="name">Cuestionario llave</field>
+            <field name="res_model">cuestionario.llave</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_cuestionario_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_cuestionario_form')})]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="0">
+        <record id="mail_consulta" model="mail.template">
+            <field name="name">Mail consulta</field>
+            <field name="model_id" ref="elcti.model_recetas"/>
+            <field name="subject">Confirmación de Prescripción Médica</field>
+            <!--field name="email_from">${(object.event_id.user_id.email_formatted or user.email_formatted or '') | safe}</field-->
+            <field name="email_to">${object.contacto.email_from}</field>
+            <!--field name="partner_to">${object.partner_id.id if object.partner_id.email and object.partner_id.email == object.email else False}</field-->
+            <!--field name="lang">${object.partner_id.lang}</field-->
+            <field name="body_html" type="html">
+                <style>
+                    * {box-sizing: border-box;}
+                    body {margin: 0; padding: 0;}
+                    a[x-apple-data-detectors] {color: inherit !important; text-decoration: inherit !important;}
+                    #MessageViewBody a {color: inherit; text-decoration: none;}
+                    p {line-height: inherit}
+                    .desktop_hide, .desktop_hide table {mso-hide: all; display: none; max-height: 0px; overflow: hidden;}
+                    @media (max-width:785px){
+                        .image_block img.big, 
+                        .row-content {width: 100% !important;}
+                        .mobile_hide {display: none;}
+                        .stack .column {width: 100%; display: block;}
+                        .mobile_hide {min-height: 0; max-height: 0; max-width: 0; overflow: hidden; font-size: 0px;}
+                        .desktop_hide, .desktop_hide table {display: table !important; max-height: none !important;}
+                    }
+                </style>
+                <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF;">
+		<tbody>
+			<tr>
+				<td>
+					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+						<tbody>
+							<tr>
+								<td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 765px;" width="765">
+										<tbody>
+											<tr>
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="width:100%;padding-right:0px;padding-left:0px;">
+																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/BeeFree/beefree-fflbjf0yfqj/editor_images/LOGO%20EN%20L%C3%8DNEA%20con%20tu%20imagen.png" style="display: block; height: auto; border: 0; width: 409px; max-width: 100%;" width="409"/></div>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td>
+																<h1 style="margin: 0; color: #f89939; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 23px; font-weight: 700; letter-spacing: normal; line-height: 150%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Confirmación de Prescripción Médica</span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #82256d; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 23px; font-weight: 700; letter-spacing: normal; line-height: 150%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder"><strong>Hola ${object.contacto.name}</strong></span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0;"><strong>El Dr. ${object.create_uid.name}</strong>te ha enviado una prescripción electrónica segura a través de la plataforma de En linea con tu imagen. Alguna duda escribe a esta dirección: <a href="mailto:${object.create_uid.email}" style="color: #0068a5;">${object.create_uid.email}</a></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #444a51; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: normal; line-height: 180%; text-align: left; margin-top: 0; margin-bottom: 0;"><strong><span class="tinyMce-placeholder">Receta ${object.id}</span></strong></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #444a51; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: normal; line-height: 200%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">FECHA: ${object.create_date}</span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0; margin-bottom: 3px;"></p>
+																	<p style="margin: 0; margin-bottom: 3px;"><strong>Paciente: </strong>${object.contacto.name}</p>
+																	<p style="margin: 0; margin-bottom: 3px;"><strong>Edad: </strong>${object.edad}</p>
+																	<p style="margin: 0; margin-bottom: 3px;"></p>
+																	<p style="margin: 0;"><strong>Diagnóstico: </strong>${object.diagnostico}</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0; margin-bottom: 7px;"><strong>[NOMBRE_MEDICAMENTO_PRESCRITO] [PRESENTACION_MEDICAMENTO_PRESCRITO]</strong></p>
+																	<p style="margin: 0; margin-bottom: 7px;">[CANTIDAD_MEDICAMENTO_PRESCRITO] Pieza</p>
+																	<p style="margin: 0;"></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0; margin-bottom: 5px;">[TRATAMIENTO_PRESCRITO]</p>
+																	<p style="margin: 0;"></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0; margin-bottom: 0px;">$[PRECIO_TRATAMIENTO_PRESCRITO]</p>
+																	<p style="margin: 0; margin-bottom: 0px;"></p>
+																	<p style="margin: 0;"><strong><u><a href="${object.enlace_de_pago}">COMPRAR</a></u></strong></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #82256d; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: right; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Precio Total estimado: $[TOTAL_MEDICAMENTO_PRESCRITO]</span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #393d47; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: normal; line-height: 200%; text-align: right; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Entrega mismo día en CDMX y de 1 a 2 días hábiles en toda la república. Se aceptan diferentes formas de pago (efectivo o tarjeta) dependiendo de la farmacia afiliada</span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #393d47; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 29px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder"></span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td style="text-align:center;width:100%;">
+																<h1 style="margin: 0; color: #444a51; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 16px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left; margin-top: 0; margin-bottom: 0;"><span class="tinyMce-placeholder">Indicaciones generales:</span></h1>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0;">${object.indicaciones}</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#f89939;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:8px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:9.6px;">
+																	<p style="margin: 0;"><strong>Información adicional:</strong><br/>Esta receta electrónica es valida en cualquiera de nuestras farmacias afiliadas.<br/>Puedes pedir ayuda o revisar las farmacias afiliadas <a href="https://www.prescrypto.com/faq/" style="color: #0068a5;">aquí.</a><br/>El uso de esta prescripción es totalmente gratuito para el paciente y no implica alguna cuota o condición con la farmacia. El contenido de la receta es responsabilidad del médico que la emite.<br/><strong>IMPORTANTE:</strong> Las farmacias afiliadas recibirán esta prescripción sin restricción, alternativamente se puede presentar impresa y firmada autográfamente por el médico en cualquier farmacia.</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td>
+																<div style="color:#444a51;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;">
+																	<p style="margin: 0; margin-bottom: 7px;"><strong>${object.create_uid.name},</strong></p>
+																	<p style="margin: 0; margin-bottom: 7px;"><a href="mailto:${object.create_uid.email}" style="color: #0068a5;">${object.create_uid.email}</a></p>
+																	<p style="margin: 0; margin-bottom: 7px;"><strong>Contacto: </strong>[TEL_MEDICO_TRATANTE] <a href="mailto:contacto@cruzadaempresarial.mx" style="color: #0068a5;">contacto@das-contigo.com</a></p>
+																	<p style="margin: 0; margin-bottom: 7px;"><strong>Universidad que emitió el título:</strong> [UNIVERSIDAD_MEDICO_TRATANTE]</p>
+																	<p style="margin: 0; margin-bottom: 7px;"><strong style="font-family: inherit; background-color: transparent;">Cédula Profesional:</strong><span style="font-family: inherit; background-color: transparent;"> [NUM_CEDULA_MEDICO_TRATANTE]</span></p>
+																	<p style="margin: 0; margin-bottom: 7px;"><strong>Especialidad:</strong> Medicina General</p>
+																	<p style="margin: 0;">DAS SERVICIOS EN SALUD S.A. DE C.V. <br/><a href="mailto:contacto@das-contigo.com" style="color: #0068a5;">contacto@das-contigo.com</a></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table><!-- End -->
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

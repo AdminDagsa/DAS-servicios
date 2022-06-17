@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="elcti_consultorios_tree" model="ir.ui.view">
+            <field name="name">elcti.consultorios.tree</field>
+            <field name="model">calendar.event.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_consultorios_form" model="ir.ui.view">
+            <field name="name">elcti.consultorios.form</field>
+            <field name="model">calendar.event.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="id"/>
+                        <field name="name"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="elcti_consultorios_vista" model="ir.actions.act_window">
+            <field name="name">Consultorios</field>
+            <field name="res_model">calendar.event.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_consultorios_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_consultorios_form')})]"/>
+        </record>
+    </data>
+</odoo>
