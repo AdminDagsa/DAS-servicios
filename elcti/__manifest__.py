@@ -22,7 +22,6 @@
     'data': [
         'security/ir.model.access.csv',
         'data/carga_inicial.xml',
-        'data/automatizaciones.xml',
         'views/elcti_pacientes_vista.xml',
         'views/elcti_citas_vista.xml',
         'views/elcti_llamadas_vista.xml',
@@ -34,6 +33,7 @@
         'views/elcti_pacientes_vista_extend.xml',
         'data/mail_consulta.xml',
         'data/mail_cita.xml',
+        'data/automatizaciones.xml',
     ],
     'application': True
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <record id="action_nombre_paciente" model="base.automation">
             <field name="name">Concatenar nombre paciente</field>
         	<field name="model_id" ref="crm.model_crm_lead"/>
