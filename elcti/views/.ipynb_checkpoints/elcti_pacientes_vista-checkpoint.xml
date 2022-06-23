@@ -27,9 +27,6 @@
                                 <div>
                                     <span class="o_kanban_record_subtitle"><field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/></span>
                                 </div>
-                                <!--div>
-                                  <field name="segundo_apellido"/>
-                                </div-->
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
                                         <field name="priority" widget="priority"/>
@@ -45,6 +42,20 @@
                         </t>
                     </templates>
                 </kanban>
+            </field>
+        </record>
+        <record id="elcti_pacientes_tree" model="ir.ui.view">
+            <field name="name">elcti.pacientes.tree</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Paciente"/>
+                    <field name="edad"/>
+                    <field name="email_from"/>
+                    <field name="phone"/>
+                    <field name="clasificacion_imc"/>
+                    <field name="etapa"/>
+                </tree>
             </field>
         </record>
         
@@ -123,18 +134,11 @@
         <record id="elcti_pacientes_vista" model="ir.actions.act_window">
             <field name="name">Pacientes</field>
             <field name="res_model">crm.lead</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,tree,form</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'kanban', 'view_id': ref('elcti_pacientes_kanban')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_pacientes_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_pacientes_form')})]"/>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">
-                    Bienvenido al programa "En línea con tu imagen"
-                </p>
-                <p>
-                    Aquí se mostrarán los pacientes registrados a través de la página web
-                </p>
-            </field>
         </record>
     </data>
 </odoo>

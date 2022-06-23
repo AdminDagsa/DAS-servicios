@@ -39,17 +39,11 @@
                             <sheet name="Formulario" string="Formulario">
                                 <div class="o_horizontal_separator d-flex justify-content-around" name="studio_div_c65714">Inicio de interacción</div>
                                 <button string="Llamada entrante" name="llamada_entrante" type="object" class="btn-success rounded-pill btn-lg mx-1">
-                                    <i class="px-1 fa fa-sign-in text-dark"/>
+                                    <i class="px-1 fa fa-sign-in text-dark" title="call_in"/>
                                 </button>
                                 <button string="Llamada saliente" name="llamada_saliente" type="object" class="btn-warning rounded-pill btn-lg mx-1 text-light">
-                                    <i class="px-1 fa fa-sign-out text-dark"/>
+                                    <i class="px-1 fa fa-sign-out text-dark" title="call_out"/>
                                 </button>
-                                <!--button string="Llamada entrante" class="btn-success rounded-pill btn-lg mx-1">
-                                    <i class="px-1 fa fa-sign-in text-dark"/>
-                                </button>
-                                <button string="Llamada saliente" class="btn-warning rounded-pill btn-lg mx-1 text-light">
-                                    <i class="px-1 fa fa-sign-out text-dark"/>
-                                </button-->
                             </sheet>
                         </div>
                     </div>
@@ -58,13 +52,13 @@
                             <sheet name="fin_llamada">
                                 <group name="fin_llamada" string="Código de cierre" class="btn-group" col="3">
                                     <button string="Resuelto" class="btn-success rounded-pill btn-sm mx-1">
-                                        <i class="px-1 fa fa-check"/>
+                                        <i class="px-1 fa fa-check" title="resuelto"/>
                                     </button>
                                     <button string="Sin resolver" class="btn-warning rounded-pill btn-sm mx-1 text-light">
-                                        <i class="px-1 fa fa-times"/>
+                                        <i class="px-1 fa fa-times" title="no_resuelto"/>
                                     </button>
                                     <button string="Otros" class="btn-info rounded-pill btn-sm mx-1 text-light">
-                                        <i class="px-1 fa fa-bars"/>
+                                        <i class="px-1 fa fa-bars" title="otro_resultado"/>
                                     </button>
                                 </group>
                             </sheet>
