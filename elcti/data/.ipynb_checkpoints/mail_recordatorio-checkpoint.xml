@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="mail_recordatorio" model="mail.template">
+            <field name="name">Mail recordatorio llamada</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="subject">Recordatorio de llamada</field>
+            <field name="email_to">${object.write_uid.email}</field>
+            <field name="body_html" type="html">
+                <p>Se activó este recordatorio automático para volver a llamar al contacto ${object.name} al número ${object.phone} para continuar el seguimiento</p>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

@@ -39,7 +39,8 @@
     <menuitem
         id="elcti_ajustes_menu"
         name="Ajustes"
-        parent="elcti_root"/>
+        parent="elcti_root"
+        groups="base.group_no_one"/>
     <menuitem
         id="elcti_cuestionario_menu"
         name="Cuestionario llave"
@@ -50,4 +51,14 @@
         name="Consultorios"
         parent="elcti_ajustes_menu"
         action="elcti_consultorios_vista"/>
+    <menuitem
+        id="elcti_equipo_menu"
+        name="Equipo de ventas"
+        parent="elcti_ajustes_menu"
+        action="sales_team.sales_team_config_action"/>
+    <menuitem
+        id="elcti_etapas_menu"
+        name="Etapas"
+        parent="elcti_ajustes_menu"
+        action="crm.crm_stage_action"/>
 </odoo>

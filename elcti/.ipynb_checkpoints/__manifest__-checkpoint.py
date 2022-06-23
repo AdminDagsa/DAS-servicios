@@ -33,6 +33,7 @@
         'views/elcti_pacientes_vista_extend.xml',
         'data/mail_consulta.xml',
         'data/mail_cita.xml',
+        'data/mail_recordatorio.xml',
         'data/automatizaciones.xml',
     ],
     'application': True

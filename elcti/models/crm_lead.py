@@ -74,6 +74,3 @@ class Pacientes(models.Model):
             record.name = record.primer_apellido
         elif record.segundo_apellido:
             record.name = record.segundo_apellido
-            
-        
-            

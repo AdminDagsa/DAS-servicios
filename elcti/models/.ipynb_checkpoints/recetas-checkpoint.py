@@ -10,7 +10,7 @@ class Receta(models.Model):
     edad = fields.Integer('Edad', related="contacto.edad")
     diagnostico = fields.Char('Diagnóstico')
     indicaciones = fields.Text('Indicaciones generales')
-    lineas_receta = fields.One2many('lineas.recetas', 'receta', string="Productos")
+    lineas_receta = fields.One2many('lineas.recetas', 'receta', string="Productos", store=True)
     enlace_de_pago = fields.Char('Enlace de pago')
     enlace_dar = fields.Char('Enlace DAR')
     direccion = fields.Char('Dirección', related="contacto.street")
@@ -37,9 +37,9 @@ class Receta(models.Model):
         productos = record.lineas_receta
         for producto in productos:
             lineItems.append({'SKU':str(producto.producto.barcode),'Cantidad':producto.cantidad})
-        
+
         parametros={
-            "receta": record.id,
+            "consulta": record.id,
             "planId": "Odoo",
             "lineItems":lineItems,
             "address": [
@@ -56,10 +56,11 @@ class Receta(models.Model):
                 }
             ]
         }
+
         r = requests.post('https://vtech-elcti-api.herokuapp.com/api/generar_liga_pago',json=parametros)
         decode = r.content.decode('utf-8')
         load = json.loads(decode)
-        
+
         return load['msg']['url'] if load['code']==200 else load['msg']
     
     def get_LigaDAR(self,record):
