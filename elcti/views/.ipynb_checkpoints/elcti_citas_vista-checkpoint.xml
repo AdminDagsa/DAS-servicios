@@ -31,6 +31,18 @@
             </field>
         </record>
         
+        <record id="elcti_citas_tree" model="ir.ui.view">
+            <field name="name">elcti.citas.tree</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start"/>
+                    <field name="consultorio"/>
+                </tree>
+            </field>
+        </record>
+        
         <record id="elcti_citas_form" model="ir.ui.view">
             <field name="name">elcti.citas.form</field>
             <field name="model">calendar.event</field>
@@ -71,6 +83,7 @@
                             </page>
                             <page name="psicologia" string="Psicología">
                                 <group>
+                                    <field name="nota_psicologia"/>
                                 </group>
                             </page>
                             <page name="seguimiento" string="Seguimiento">
@@ -80,6 +93,8 @@
                                     <field name="frec_card"/>
                                     <field name="presion"/>
                                 </group>
+                                <label for="nota_medicina"/>
+                                <field name="nota_medicina"/>
                                 <group string="Nutricional" col="4">
                                     <field name="peso"/>
                                     <field name="talla"/>
@@ -93,6 +108,8 @@
                                         <div>Cadera: <field name="cadera" class="oe_inline"/></div>
                                     </div>
                                 </group>
+                                <label for="nota_nutricion"/>
+                                <field name="nota_nutricion"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -103,24 +120,26 @@
         <record id="elcti_citas_vista" model="ir.actions.act_window">
             <field name="name">Citas</field>
             <field name="res_model">calendar.event</field>
-            <field name="view_mode">calendar,form</field>
+            <field name="view_mode">calendar,tree,form</field>
             <field name="search_view_id" ref="elcti_citas_search"/>
             <field name="domain">[('categ_ids', '!=', False)]</field>
             <field name="context">{'form_view_ref': 'elcti.elcti_citas_form', 'default_duration':'1'}</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_citas_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_citas_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_citas_form')})]"/>
         </record>
         
         <record id="elcti_citas_vista_paciente" model="ir.actions.act_window">
             <field name="name">Citas</field>
             <field name="res_model">calendar.event</field>
-            <field name="view_mode">calendar,form</field>
+            <field name="view_mode">calendar,tree,form</field>
             <field name="search_view_id" ref="elcti_citas_search"/>
             <field name="domain">[('categ_ids', '!=', False)]</field>
             <field name="context">{'search_default_contacto': [active_id], 'default_contacto': active_id, 'form_view_ref': 'elcti.elcti_citas_form'}</field>
             <field name="view_ids" eval="[(5, 0, 0),
                                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_citas_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_citas_tree')}),
                                          (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_citas_form')})]"/>
         </record>
     </data>

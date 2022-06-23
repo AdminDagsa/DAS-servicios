@@ -54,6 +54,9 @@ class Calendario(models.Model):
     pecho = fields.Float('Pecho/busto')
     cintura = fields.Float('Cintura')
     cadera = fields.Float('Cadera')
+    nota_psicologia = fields.Text('Observaciones psicologo')
+    nota_medicina = fields.Text('Observaciones médicas')
+    nota_nutricion = fields.Text('Observaciones nutricionales')
     
     def nombre_cita(self,record):
         #raise UserError(record.contacto.name)

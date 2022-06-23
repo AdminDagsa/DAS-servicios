@@ -2,5 +2,7 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_cuestionario_llave,access_cuestionario_llave,model_cuestionario_llave,base.group_user,1,1,1,1
 lineas_recetas_acceso,lineas_recetas_acceso,model_lineas_recetas,base.group_user,1,1,1,1
 recetas_acceso,recetas_acceso,model_recetas,base.group_user,1,1,1,1
+lineas_consultas_acceso,lineas_consultas_acceso,model_lineas_consultas,base.group_user,1,1,1,1
+consultas_acceso,consultas_acceso,model_consultas,base.group_user,1,1,1,1
 farmacovigilancia_acceso,farmacovigilancia_acceso,model_farmacovigilancia,base.group_user,1,1,1,1
 llamadas_acceso,llamadas_acceso,model_llamadas,base.group_user,1,1,1,1
