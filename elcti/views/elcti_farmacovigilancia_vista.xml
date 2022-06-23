@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="elcti_farmacovigilancia_tree" model="ir.ui.view">
+            <field name="name">elcti.farmacovigilancia.tree</field>
+            <field name="model">farmacovigilancia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_farmacovigilancia_form" model="ir.ui.view">
+            <field name="name">elcti.farmacovigilancia.form</field>
+            <field name="model">farmacovigilancia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header/>
+                    <sheet string="Farmacovigilancia">
+                        <div class="oe_title" invisible="1">
+                            <h1>
+                                <field name="id"/>
+                            </h1>
+                        </div>
+                        <group name="studio_group_ac5c96" string="Datos del notificador *">
+                            <field name="nombre" string="Paciente"/>
+                            <field name="telefono_fijo" string="Teléfono"/>
+                        </group>
+                        <div>
+                            <p class="oe_grey">* En algunos casos el notificador es también el consumidor</p>
+                        </div>
+                        <group string="Datos del medicamento (si aplica)">
+                            <field name="producto" string="Nombre del producto"/>
+                            <field name="lote" string="lote"/>
+                            <field name="laboratorio" string="Laboratorio"/>
+                            <field name="caducidad" string="Caducidad"/>
+                            <label for="fin" string="Fecha del tratamiento"/>
+                            <div class="d-flex">
+                                <span class="o_form_label mx-3 oe_edit_only">Desde</span>
+                                <field name="inicio" string="Inicio"/>
+                                <span class="o_form_label mx-3 oe_edit_only">Hasta</span>
+                                <field name="fin" string="fin"/>
+                            </div>
+                        </group>
+                        <group string="Sospecha de reacción adversa" col="6">
+                            <field name="dolor_de_cabeza" string="Dolor de cabeza"/>
+                            <field name="mareos" string="Mareos"/>
+                            <field name="nauseas" string="Nauseas"/>
+                            <field name="vomito" string="Vómito"/>
+                            <field name="ardor_estomago" string="Ardor de estomago"/>
+                            <field name="alteraciones_piel" string="Alteraciones en piel"/>
+                            <field name="aumento_sueno" string="Aumento en sueño"/>
+                            <field name="diarrea" string="Diarrea"/>
+                            <field name="sangrado" string="Sangrado"/>
+                            <field name="comezon" string="Comezon"/>
+                        </group>
+                        <group string="Consumidor *">
+                            <field name="nombre_consumidor" string="Nombre"/>
+                            <field name="fecha_nacimiento" string="Fecha de nacimiento"/>
+                            <field name="sexo" string="Sexo (M ó F)"/>
+                            <field name="talla" string="Estatura (m)"/>
+                            <field name="peso" string="Peso (Kg)"/>
+                        </group>
+                        <div>
+                            <p class="oe_grey">* En algunos casos el notificador es también el consumidor</p>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="elcti_farmacovigilancia_vista" model="ir.actions.act_window">
+            <field name="name">Farmacovigilancia</field>
+            <field name="res_model">farmacovigilancia</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_farmacovigilancia_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_farmacovigilancia_form')})]"/>
+        </record>
+    </data>
+</odoo>

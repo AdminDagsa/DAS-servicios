@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ROOT -->
+    <menuitem
+        id="elcti_root"
+        name="CRM En línea con tu imagen"
+        web_icon="elcti,static/description/icon.png"/>
+    <!-- PACIENTES -->
+    <menuitem
+        id="elcti_pacientes_menu"
+        name="Pacientes"
+        parent="elcti_root"
+        action="elcti_pacientes_vista"/>
+    <!-- CITAS -->
+    <menuitem
+        id="elcti_citas_menu"
+        name="Citas"
+        parent="elcti_root"
+        action="elcti_citas_vista"/>
+    <!-- LLAMADAS -->
+    <menuitem
+        id="elcti_llamadas_menu"
+        name="Llamadas"
+        parent="elcti_root"
+        action="elcti_llamadas_vista"/>
+    <!-- RECETAS -->
+    <menuitem
+        id="elcti_recetas_menu"
+        name="Consultas"
+        parent="elcti_root"
+        action="elcti_recetas_vista"/>
+    <!-- FARMACOVIGILANCIA -->
+    <menuitem
+        id="elcti_farmacovigilancia_menu"
+        name="Farmacovigilancia"
+        parent="elcti_root"
+        action="elcti_farmacovigilancia_vista"/>
+    <!-- AJUSTES -->
+    <menuitem
+        id="elcti_ajustes_menu"
+        name="Ajustes"
+        parent="elcti_root"
+        groups="base.group_no_one"/>
+    <menuitem
+        id="elcti_cuestionario_menu"
+        name="Cuestionario llave"
+        parent="elcti_ajustes_menu"
+        action="elcti_cuestionario_vista"/>
+    <menuitem
+        id="elcti_consultorios_menu"
+        name="Consultorios"
+        parent="elcti_ajustes_menu"
+        action="elcti_consultorios_vista"/>
+    <menuitem
+        id="elcti_equipo_menu"
+        name="Equipo de ventas"
+        parent="elcti_ajustes_menu"
+        action="sales_team.sales_team_config_action"/>
+    <menuitem
+        id="elcti_etapas_menu"
+        name="Etapas"
+        parent="elcti_ajustes_menu"
+        action="crm.crm_stage_action"/>
+</odoo>

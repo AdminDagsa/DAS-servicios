@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="elcti_llamadas_search" model="ir.ui.view">
+            <field name="name">elcti.llamadas.search</field>
+            <field name="model">llamadas</field>
+            <field name="arch" type="xml">
+                <search string="Search Calls">
+                    <field name="contacto"/>
+                </search>
+            </field>
+        </record>
+        
+        <record id="elcti_llamadas_tree" model="ir.ui.view">
+            <field name="name">elcti.llamadas.tree</field>
+            <field name="model">llamadas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="contacto"/>
+                    <field name="resumen"/>
+                    <field name="inicio_llamada"/>
+                    <field name="fin_llamada"/>
+                    <field name="duracion_llamada"/>
+                    <field name="codigo_cierre"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_llamadas_form" model="ir.ui.view">
+            <field name="name">elcti.llamadas.form</field>
+            <field name="model">llamadas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header attrs="{'invisible': ['|',['inicio_llamada','=',False],['fin_llamada','!=',False]]}">
+                        <button string="Finalizar llamada" name="finalizar_llamada" type="object" class="btn-primary"/>
+                    </header>
+                    <div style="height: 95%" attrs="{'invisible': [('inicio_llamada', '!=', False)]}">
+                        <div name="Interaccion" class="d-flex align-items-center justify-content-center text-center container bg-dark p-4 shadow my-3 border h-100">
+                            <sheet name="Formulario" string="Formulario">
+                                <div class="o_horizontal_separator d-flex justify-content-around" name="studio_div_c65714">Inicio de interacción</div>
+                                <button string="Llamada entrante" name="llamada_entrante" type="object" class="btn-success rounded-pill btn-lg mx-1">
+                                    <i class="px-1 fa fa-sign-in text-dark" title="call_in"/>
+                                </button>
+                                <button string="Llamada saliente" name="llamada_saliente" type="object" class="btn-warning rounded-pill btn-lg mx-1 text-light">
+                                    <i class="px-1 fa fa-sign-out text-dark" title="call_out"/>
+                                </button>
+                                <!--button string="Llamada entrante" class="btn-success rounded-pill btn-lg mx-1">
+                                    <i class="px-1 fa fa-sign-in text-dark"/>
+                                </button>
+                                <button string="Llamada saliente" class="btn-warning rounded-pill btn-lg mx-1 text-light">
+                                    <i class="px-1 fa fa-sign-out text-dark"/>
+                                </button-->
+                            </sheet>
+                        </div>
+                    </div>
+                    <div class="sticky-top" attrs="{'invisible': [('inicio_llamada', '=', False)]}">
+                        <div name="fin_llamada" class="container table-dark px-4 shadow">
+                            <sheet name="fin_llamada">
+                                <group name="fin_llamada" string="Código de cierre" class="btn-group" col="3">
+                                    <button string="Resuelto" class="btn-success rounded-pill btn-sm mx-1">
+                                        <i class="px-1 fa fa-check" title="resuelto"/>
+                                    </button>
+                                    <button string="Sin resolver" class="btn-warning rounded-pill btn-sm mx-1 text-light">
+                                        <i class="px-1 fa fa-times" title="no_resuelto"/>
+                                    </button>
+                                    <button string="Otros" class="btn-info rounded-pill btn-sm mx-1 text-light">
+                                        <i class="px-1 fa fa-bars" title="otro_resultado"/>
+                                    </button>
+                                </group>
+                            </sheet>
+                        </div>
+                    </div>
+                    <div attrs="{'invisible': [('inicio_llamada', '=', False)]}">
+                        <div name="Llamadas" class="container bg-light p-4 shadow my-3 border">
+                            <sheet name="Llamadas" string="Llamadas">
+                                <div class="oe_title">
+                                    <h1>
+                                        <field name="id" required="0" placeholder="Name..." attrs="{'invisible': 1}"/>
+                                    </h1>
+                                </div>
+                                <group name="Contacto" string="Contacto">
+                                    <group name="studio_group_0aa46e_left">
+                                        <field name="contacto"/>
+                                        <field name="fecha_de_nacimiento"/>
+                                        <field name="sexo" widget="statusbar" clickable="1"/>
+                                        <field name="correo" string="Email" widget="email"/>
+                                        <field name="telefono" widget="phone"/>
+                                    </group>
+                                    <group name="studio_group_0aa46e_right">
+                                        <label for="direccion" string="Dirección"/>
+                                        <div class="o_address_format">
+                                            <field name="direccion" placeholder="Calle" string="Calle" class="o_address_street"/>
+                                            <field name="pais" placeholder="País" class="o_address_street" options="{'no_open': True, 'no_create': True}"/>
+                                            <field name="estado" placeholder="Estado" string="Estado" class="o_address_street" options="{'no_open': True, 'no_create': True}" domain="[('country_id', '=', pais)]"/>
+                                            <field name="ciudad" placeholder="Delegación" class="o_address_street" options="{'no_open': True, 'no_create': True}" domain="[('state_id', '=', estado)]"/>
+                                            <field name="colonia" placeholder="Colonia" string="Colonia" class="o_address_street"/>
+                                            <field name="cp" placeholder="C.P." string="C.P." class="o_address_street"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="llamada_contacto" widget="selection_badge"/>
+                                        <field name="acepta_politica"/>
+                                    </group>
+                                    <group>
+                                        <label for="recordar_meses" string="Recordar en"/>
+                                        <div>
+                                            <div class="clearfix"><field name="recordar_meses" class="oe_inline"/> meses</div>
+                                            <div class="clearfix"><field name="recordar_semanas" class="oe_inline"/> semanas</div>
+                                            <div class="clearfix"><field name="recordar_dias" class="oe_inline"/> días</div>
+                                            <div class="clearfix"><field name="recordar_horas" class="oe_inline"/> horas</div>
+                                            <div class="clearfix"><field name="recordar_minutos" class="oe_inline"/> minutos</div>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group name="studio_group_ce8fa8">
+                                    <field name="resumen" string="Resumen"/>
+                                    <field name="descripcion" string="Descripción"/>
+                                </group>
+                                <group name="cuestionario_llave" string="Cuestionario Llave">
+                                    <field name="cuestionario_llave" context="{'default_contacto':contacto}"/>
+                                </group>
+                                <group name="calendario" string="Calendario de citas">
+                                    <field name="citas" context="{'form_view_ref': 'elcti.elcti_citas_form', 'default_contacto': contacto}"/>
+                                </group>
+                                <group name="Interaccion" string="Registro de interacción">
+                                    <group name="studio_group_7385be">
+                                        <field name="direccion_llamada" string="Dirección de llamada" widget="radio" options="{'horizontal':true}" force_save="True" attrs="{}" readonly="1"/>
+                                        <field name="codigo_cierre" string="Código de cierre" readonly="1"/>
+                                    </group>
+                                    <group name="studio_group_3d5e4f">
+                                       <field name="inicio_llamada" string="Inicio llamada" force_save="True" attrs="{}" readonly="1"/>
+                                        <field name="fin_llamada" string="Fin llamada" force_save="True" attrs="{}" readonly="1"/>
+                                        <field name="duracion_llamada" string="Duración" readonly="1"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="elcti_llamadas_vista" model="ir.actions.act_window">
+            <field name="name">Llamadas</field>
+            <field name="res_model">llamadas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_recordar_meses': 0, 'default_recordar_semanas': 0, 'default_recordar_dias': 0, 'default_recordar_horas': 0, 'default_recordar_minutos': 0}</field>
+            <field name="search_view_id" ref="elcti_llamadas_search"/>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>
+        </record>
+        
+        <record id="elcti_llamadas_vista_paciente" model="ir.actions.act_window">
+            <field name="name">Llamadas</field>
+            <field name="res_model">llamadas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="elcti_llamadas_search"/>
+            <field name="context">{'search_default_contacto': [active_id], 'default_contacto': active_id, 'default_recordar_meses': "0", 'default_recordar_semanas': "0", 'default_recordar_dias': "0", 'default_recordar_horas': "0", 'default_recordar_minutos': "0"}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_llamadas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_llamadas_form')})]"/>
+        </record>
+    </data>
+</odoo>

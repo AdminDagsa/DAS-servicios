@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="elcti_citas_search" model="ir.ui.view">
+            <field name="name">elcti.citas.search</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <search string="Search Meetings">
+                    <field name="contacto"/>
+                </search>
+            </field>
+        </record>
+        
+        <record id="elcti_citas_calendar" model="ir.ui.view">
+            <field name="name">elcti.citas.kanban</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <calendar string="Consultas programadas"
+                          color="contacto"
+                          date_start="start"
+                          date_stop="stop"
+                          date_delay="duration"
+                          all_day="allday"
+                          event_open_popup="False"
+                          event_limit="5"
+                          mode="month"
+                          quick_add="False"
+                          hide_time="False">
+                    <field name="consultorio" filters="1"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <record id="elcti_citas_tree" model="ir.ui.view">
+            <field name="name">elcti.citas.tree</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start"/>
+                    <field name="consultorio"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_citas_form" model="ir.ui.view">
+            <field name="name">elcti.citas.form</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="res_model" invisible="1"/>
+                        <field name="res_id" invisible="1"/>
+                        <field name="attendee_status" invisible="1"/>
+                        <field name="active" invisible="1"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="contacto"/>
+                            </div>
+                            <h1>
+                                <field name="contacto" placeholder="Paciente"/>
+                            </h1>
+                        </div>
+                        <notebook>
+                            <page name="page_details" string="Cita">
+                                <group>
+                                    <group>
+                                        <field name="start" string="Starting at"/>
+                                        <field name="stop" string="Finaliza" invisible="1"/>
+                                        <label for="duration"/>
+                                        <div>
+                                            <field name="duration" widget="float_time" string="Duration" class="oe_inline"/>
+                                            <span> hours</span>
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <field name="categ_ids" widget="many2many_tags" options="{'no_create_edit': True}" string="Consultorio"/>
+                                        <field name="location" string="Ubicación"/>
+                                    </group>
+                                </group>
+                                <label for="description"/>
+                                <field name="description" string="Observaciones"/>
+                            </page>
+                            <page name="psicologia" string="Psicología">
+                                <group>
+                                    <field name="nota_psicologia"/>
+                                </group>
+                            </page>
+                            <page name="seguimiento" string="Seguimiento">
+                                <group string="Signos vitales" col="4">
+                                    <field name="temperatura"/>
+                                    <field name="frec_resp"/>
+                                    <field name="frec_card"/>
+                                    <field name="presion"/>
+                                </group>
+                                <label for="nota_medicina"/>
+                                <field name="nota_medicina"/>
+                                <group string="Nutricional" col="4">
+                                    <field name="peso"/>
+                                    <field name="talla"/>
+                                    <field name="imc"/>
+                                    <field name="clasificacion"/>
+                                    <field name="grasa"/>
+                                    <label for="pecho" string="Medidas (cm)"/>
+                                    <div>
+                                        <div>Pecho: <field name="pecho" class="oe_inline"/></div>
+                                        <div>Cintura: <field name="cintura" class="oe_inline"/></div>
+                                        <div>Cadera: <field name="cadera" class="oe_inline"/></div>
+                                    </div>
+                                </group>
+                                <label for="nota_nutricion"/>
+                                <field name="nota_nutricion"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="elcti_citas_vista" model="ir.actions.act_window">
+            <field name="name">Citas</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="search_view_id" ref="elcti_citas_search"/>
+            <field name="domain">[('categ_ids', '!=', False)]</field>
+            <field name="context">{'form_view_ref': 'elcti.elcti_citas_form', 'default_duration':'1'}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_citas_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_citas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_citas_form')})]"/>
+        </record>
+        
+        <record id="elcti_citas_vista_paciente" model="ir.actions.act_window">
+            <field name="name">Citas</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="search_view_id" ref="elcti_citas_search"/>
+            <field name="domain">[('categ_ids', '!=', False)]</field>
+            <field name="context">{'search_default_contacto': [active_id], 'default_contacto': active_id, 'form_view_ref': 'elcti.elcti_citas_form'}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'calendar', 'view_id': ref('elcti_citas_calendar')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_citas_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_citas_form')})]"/>
+        </record>
+    </data>
+</odoo>

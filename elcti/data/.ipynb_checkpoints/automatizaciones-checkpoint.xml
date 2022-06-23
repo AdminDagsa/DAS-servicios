@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="action_nombre_paciente" model="base.automation">
+            <field name="name">Concatenar nombre paciente</field>
+        	<field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="trigger">on_create_or_write</field>
+        	<field name="state">code</field>
+            <field name="code">model.concatenar_nombre(record)</field>
+    	</record>
+        <record id="action_enlace_pago" model="base.automation">
+            <field name="name">Obtener enlace de pago</field>
+        	<field name="model_id" ref="elcti.model_recetas"/>
+            <field name="trigger">on_create_or_write</field>
+        	<field name="state">code</field>
+            <field name="code">model.obtener_enlaces(record)</field>
+    	</record>
+        <record id="nombre_cita" model="base.automation">
+            <field name="name">Nombre de la cita al crear paciente CRM</field>
+            <field name="model_id" ref="calendar.model_calendar_event"/>
+            <field name="active" eval="True"/>
+            <field name="trigger">on_create_or_write</field>
+            <field name="state">code</field>
+            <field name="code">model.nombre_cita(record)</field>
+        </record>
+        <record id="action_enviar_cita" model="base.automation">
+            <field name="name">Enviar correo de cita</field>
+            <field name="model_id" ref="calendar.model_calendar_event"/>
+            <field name="active" eval="True"/>
+            <field name="trigger">on_create</field>
+            <field name="filter_domain">[('categ_ids', '!=', False)]</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="elcti.mail_cita"/>
+        </record>
+        <record id="action_enviar_consulta" model="base.automation">
+            <field name="name">Enviar correo de consulta</field>
+            <field name="model_id" ref="elcti.model_recetas"/>
+            <field name="active" eval="True"/>
+            <field name="trigger">on_create</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="elcti.mail_consulta"/>
+        </record>
+        <record id="action_recordatorio_llamada" model="base.automation">
+            <field name="name">Enviar recordatorio de llamada</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="active" eval="True"/>
+            <field name="trigger">on_time</field>
+            <field name="trg_date_id" search="[('model','=','crm.model_crm_lead'),('name','=','recordatorio_llamada')]"/>
+            <field name="trg_date_range">-1</field>
+            <field name="trg_date_range_type">minutes</field>
+            <field name="state">email</field>
+            <field name="template_id" ref="elcti.mail_recordatorio"/>
+        </record>
+    </data>
+</odoo>

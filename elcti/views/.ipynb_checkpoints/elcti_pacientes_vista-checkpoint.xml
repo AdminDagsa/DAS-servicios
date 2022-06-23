@@ -3,9 +3,18 @@
     <data>
         <record id="elcti_pacientes_kanban" model="ir.ui.view">
             <field name="name">elcti.pacientes.kanban</field>
-            <field name="model">pacientes</field>
+            <field name="model">crm.lead</field>
             <field name="arch" type="xml">
-                <kanban>
+                <kanban
+                        create="false"
+                        default_group_by="etapa"
+                        class="o_kanban_small_column o_opportunity_kanban"
+                        group_create="false"
+                        group_delete="false"
+                        group_edit="false"
+                        quick_create="false"
+                        records_draggable="false"
+                        archivable="false">
                     <field name="nombres"/>
                     <field name="primer_apellido"/>
                     <field name="segundo_apellido"/>
@@ -13,14 +22,14 @@
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_content oe_kanban_global_click">
                                 <div>
-                                    <strong class="o_kanban_record_title"><span><field name="nombres"/></span></strong>
+                                    <strong class="o_kanban_record_title"><span><field name="name"/></span></strong>
                                 </div>
                                 <div>
-                                    <span class="o_kanban_record_subtitle"><field name="primer_apellido"/></span>
+                                    <span class="o_kanban_record_subtitle"><field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/></span>
                                 </div>
-                                <div>
+                                <!--div>
                                   <field name="segundo_apellido"/>
-                                </div>
+                                </div-->
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
                                         <field name="priority" widget="priority"/>
@@ -38,19 +47,101 @@
                 </kanban>
             </field>
         </record>
+        <record id="elcti_pacientes_tree" model="ir.ui.view">
+            <field name="name">elcti.pacientes.tree</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Paciente"/>
+                    <field name="edad"/>
+                    <field name="email_from"/>
+                    <field name="phone"/>
+                    <field name="clasificacion_imc"/>
+                    <field name="etapa"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="elcti_pacientes_form" model="ir.ui.view">
+            <field name="name">elcti.pacientes.form</field>
+            <field name="model">crm.lead</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="stage_id" widget="statusbar" clickable="1" domain="[('id', 'not in', [1,2,3,4])]"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="titulo">
+                            <label for="name" class="oe_edit_only" string="Paciente"/>
+                            <h1>
+                                <field name="name" placeholder="Nombre del paciente"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="nombres" string="Nombres"/>
+                                <field name="primer_apellido" string="Primer Apellido"/>
+                                <field name="segundo_apellido" string="Segundo Apellido"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Dirección" class="o_address_street"/>
+                                    <field name="country_id" placeholder="País" class="o_address_country" options="{'no_open': True, 'no_create': True}"/>
+                                    <field name="state_id" placeholder="Estado" class="o_address_state" options="{'no_open': True, 'no_create': True}" domain="[('country_id', '=', country_id)]"/>
+                                    <field name="ciudad" placeholder="Ciudad/Delegación" class="o_address_city" options="{'no_open': True, 'no_create': True}" domain="[('state_id', '=', state_id)]"/>
+                                    <field name="city" placeholder="Municipio/Colonia" class="o_address_city"/>
+                                    <field name="zip" placeholder="C.P." class="o_address_zip"/>
+                                </div>
+                                <field name="email_from" string="Email" widget="email"/>
+                                <field name="phone" widget="phone"/>
+                            </group>
+                            <group>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="fecha_de_nacimiento" string="Fecha de nacimiento"/>
+                                <field name="edad" string="Edad"/>
+                                <field name="sexo" widget="statusbar" clickable="1"/>
+                                <field name="clasificacion_imc" string="Clasificacion IMC"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="llamada_contacto" widget="selection_badge"/>
+                                <field name="acepta_politica"/>
+                            </group>
+                            <group>
+                                <label for="recordar_meses" string="Recordar en"/>
+                                <div>
+                                    <div class="clearfix"><field name="recordar_meses" class="oe_inline"/> meses</div>
+                                    <div class="clearfix"><field name="recordar_semanas" class="oe_inline"/> semanas</div>
+                                    <div class="clearfix"><field name="recordar_dias" class="oe_inline"/> días</div>
+                                    <div class="clearfix"><field name="recordar_horas" class="oe_inline"/> horas</div>
+                                    <div class="clearfix"><field name="recordar_minutos" class="oe_inline"/> minutos</div>
+                                </div>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Cuestionario llave" name="cuestionario_llave">
+                                <field name="cuestionario_llave"/>
+                            </page>
+                            <page string="Citas de consultorio" name="citas">
+                                <field name="citas"/>
+                            </page>
+                            <page string="Llamadas" name="llamadas">
+                                <field name="llamadas"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
         
         <record id="elcti_pacientes_vista" model="ir.actions.act_window">
             <field name="name">Pacientes</field>
-            <field name="res_model">pacientes</field>
-            <field name="view_mode">kanban</field>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">
-                    Bienvenido al programa "En línea con tu imagen"
-                </p>
-                <p>
-                    Aquí se mostrarán los pacientes registrados a través de la página web
-                </p>
-            </field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                                         (0, 0, {'view_mode': 'kanban', 'view_id': ref('elcti_pacientes_kanban')}),
+                                         (0, 0, {'view_mode': 'tree', 'view_id': ref('elcti_pacientes_tree')}),
+                                         (0, 0, {'view_mode': 'form', 'view_id': ref('elcti_pacientes_form')})]"/>
         </record>
-
-</data></odoo>
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>        
+        <record id="elcti_pacientes_form_extend" model="ir.ui.view">
+            <field name="name">elcti.pacientes.form.extend</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="elcti_pacientes_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='titulo']" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(elcti_citas_vista_paciente)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-calendar">
+                            <div class="o_stat_info">
+                                <field name="conteo_citas" class="o_stat_value"/>
+                                <span class="o_stat_text">Citas Médicas</span>
+                            </div>
+                        </button>
+                        <button name="%(elcti_llamadas_vista_paciente)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-phone">
+                            <div class="o_stat_info">
+                                <field name="conteo_llamadas" class="o_stat_value"/>
+                                <span class="o_stat_text">Llamadas</span>
+                            </div>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

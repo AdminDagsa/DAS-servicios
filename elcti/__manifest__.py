@@ -8,9 +8,7 @@
         'crm',
         'calendar',
         'stock',
-        #'studio_customization',
-        #'web_studio',
-        #'x_llamadas',
+
     ],
     'author': "Gustavo Torres",
     'category': 'Customizations',
@@ -23,22 +21,21 @@
     """,
     # data files always loaded at installation
     'data': [
-        #'security/ir.model.access.csv',
-        #'data/carga_inicial.xml',
-        'views/views.xml',
+        'security/ir.model.access.csv',
+        'data/carga_inicial.xml',
         'views/elcti_pacientes_vista.xml',
-        #'views/elcti_calendario.xml',
-        #'views/elcti_recetas.xml',
-        #'views/elcti_farmacovigilancia.xml',
-        #'views/elcti_cuestionario.xml',
-        #'views/elcti_oportunidades.xml',
-        #'views/elcti_llamadas.xml',
-        #'views/crm_elcti.xml',
-        #'views/elcti_oportunidades_extend.xml',
+        'views/elcti_citas_vista.xml',
+        'views/elcti_llamadas_vista.xml',
+        'views/elcti_recetas_vista.xml',
+        'views/elcti_farmacovigilancia_vista.xml',
+        'views/elcti_cuestionario_vista.xml',
+        'views/elcti_consultorios_vista.xml',
+        'views/menu.xml',
+        'views/elcti_pacientes_vista_extend.xml',
+        'data/mail_consulta.xml',
+        'data/mail_cita.xml',
+        'data/mail_recordatorio.xml',
+        'data/automatizaciones.xml',
     ],
-    # data files containing optionally loaded demonstration data
-    #'demo': [
-        #'demo/demo_data.xml',
-    #],
     'application': True
 }
