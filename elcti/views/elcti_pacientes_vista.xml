@@ -30,6 +30,7 @@
                                 <!--div>
                                   <field name="segundo_apellido"/>
                                 </div-->
+
                                 <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
                                         <field name="priority" widget="priority"/>
@@ -47,7 +48,6 @@
                 </kanban>
             </field>
         </record>
-        
         <record id="elcti_pacientes_tree" model="ir.ui.view">
             <field name="name">elcti.pacientes.tree</field>
             <field name="model">crm.lead</field>

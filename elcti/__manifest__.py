@@ -8,6 +8,7 @@
         'crm',
         'calendar',
         'stock',
+
     ],
     'author': "Gustavo Torres",
     'category': 'Customizations',

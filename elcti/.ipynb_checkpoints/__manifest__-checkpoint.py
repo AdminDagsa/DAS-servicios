@@ -8,6 +8,7 @@
         'crm',
         'calendar',
         'stock',
+
     ],
     'author': "Gustavo Torres",
     'category': 'Customizations',
@@ -20,6 +21,7 @@
     """,
     # data files always loaded at installation
     'data': [
+
         'security/ir.model.access.csv',
         'data/carga_inicial.xml',
         'views/elcti_pacientes_vista.xml',
