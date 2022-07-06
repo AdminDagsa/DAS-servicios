@@ -10,29 +10,25 @@
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
 
 <head>
-	<title></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
-	<!--[if !mso]><!-->
-	<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"/>
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"/>
-	<!--<![endif]-->
-	<style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"/>
+    <style>
 		* {
 			box-sizing: border-box;
 		}
@@ -109,139 +105,130 @@
 </head>
 
 <body style="background-color: #FFFFFF; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
-	<table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF;">
-		<tbody>
-			<tr>
-				<td>
-					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 505px;" width="505">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="image_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="width:100%;padding-right:0px;padding-left:0px;">
-																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/01_CARTA_ASSETS_1.png" style="display: block; height: auto; border: 0; width: 505px; max-width: 100%;" width="505"/></div>
-															</td>
-														</tr>
-													</table>
-													<table class="image_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td>
-																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/02_CARTA_ASSETS.png" style="display: block; height: auto; border: 0; width: 429px; max-width: 100%;" width="429"/></div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td>
-																<div style="color:#82256d;direction:ltr;font-family:Verdana, Geneva, sans-serif;font-size:11px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:13.2px;">
-																	<p style="margin: 0;">Por ello, hemos creado "En línea con tu Imagen", un programa de atención integral en salud, de calidad y multidisciplinario para brindarte todas las herramientas que te apoyarán a alcanzar tu peso óptimo y mejorar tu calidad de vida y salud. Juntos, trazaremos metas individualizadas que te permitan alcanzar tus objetivos de manera profesional y eficiente.</p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="heading_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="text-align:center;width:100%;">
-																<h1 style="margin: 0; color: #82256d; direction: ltr; font-family: Verdana, Geneva, sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -2px; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><strong><span class="tinyMce-placeholder">¡Bienvenido/a!</span><span class="tinyMce-placeholder"></span></strong></h1>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td>
-																<div style="color:#82256d;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:17px;font-weight:700;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
-																	<p style="margin: 0; margin-bottom: 0px;"></p>
-																	<p style="margin: 0;">${object.contacto.name}</p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td>
-																<div style="color:#82256d;direction:ltr;font-family:Verdana, Geneva, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:16.8px;">
-																	<p style="margin: 0; margin-bottom: 3px;">Es un placer que formes parte de <strong>nuestro equipo.</strong></p>
-																	<p style="margin: 0; margin-bottom: 3px;">Pronto iniciaremos tu <strong>primera valoración </strong>por parte del servicio de nutrición clínica y médica.</p>
-																	<p style="margin: 0;"><strong>Contamos con un equipo de expertos en:</strong></p>
-																</div>
-															</td>
-														</tr>
-													</table>
-													<table class="paragraph_block" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
-														<tr>
-															<td>
-																<div style="color:#393d47;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;"></div>
-															</td>
-														</tr>
-													</table>
-													<table class="image_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="width:100%;padding-right:0px;padding-left:0px;">
-																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/05_CARTA_ASSETS.png" style="display: block; height: auto; border: 0; width: 379px; max-width: 100%;" width="379"/></div>
-															</td>
-														</tr>
-													</table>
-													<table class="image_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="width:100%;padding-right:0px;padding-left:0px;">
-																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/06_CARTA_ASSETS.png" style="display: block; height: auto; border: 0; width: 480px; max-width: 100%;" width="480"/></div>
-															</td>
-														</tr>
-													</table>
-													<table class="image_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="width:100%;padding-right:0px;padding-left:0px;">
-																<div align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/07_CARTA_ASSETS.png" style="display: block; height: auto; border: 0; width: 505px; max-width: 100%;" width="505"/></div>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-						<tbody>
-							<tr>
-								<td>
-									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 505px;" width="505">
-										<tbody>
-											<tr>
-												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
-													<table class="icons_block" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-														<tr>
-															<td style="vertical-align: middle; color: #9d9d9d; font-family: inherit; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;">
-																<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
-																	<tr>
-																		<td style="vertical-align: middle; text-align: center;">
-																			<!--[if vml]><table align="left" cellpadding="0" cellspacing="0" role="presentation" style="display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;"><![endif]-->
-																			<!--[if !vml]><!-->
-																		</td>
-																	</tr>
-																</table>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</tbody>
-	</table><!-- End -->
+    <div style="margin-bottom:20px">
+        <p>Acude a tu cita el día ${object.fecha_cita()}</p>
+        <p>Dirección:<br/>${object.categ_ids[0].direccion}</p>
+        % if object.description != "":
+        <p>Notas:<br/>${object.description}</p>
+        % endif
+    </div>
+	% if object.contacto.conteo_citas == 1:
+    <table class="nl-container" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; background-color: #FFFFFF;" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table class="row row-1" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tbody>
+                            <tr>
+                                <td><table class="row-content stack" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; color: #000000; width: 505px;" width="505" cellspacing="0" cellpadding="0" border="0" align="center">
+                  <tbody>
+                    <tr>
+                      <td class="column column-1" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;" width="100%"><table class="image_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="width:100%;padding-right:0px;padding-left:0px;"><div style="line-height:10px" align="center"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/01_CARTA_ASSETS_1.png" style="display:block;height: auto; border: 0; width: 505px; max-width: 100%;"/></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="image_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="10" border="0">
+                          <tbody>
+                            <tr>
+                              <td><div style="line-height:10px" align="center"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/02_CARTA_ASSETS.png" style="display:block;height: auto; border: 0; width: 429px; max-width: 100%;"/></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="paragraph_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; word-break: break-word;" width="100%" cellspacing="0" cellpadding="10" border="0">
+                          <tbody>
+                            <tr>
+                              <td><div style="color:#82256d;direction:ltr;font-family:Verdana, Geneva, sans-serif;font-size:11px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:13.2px;">
+                                  <p style="margin:0;">Por ello, hemos creado "En línea con tu Imagen", un programa de atención integral en salud, de calidad y multidisciplinario para brindarte todas las herramientas que te apoyarán a alcanzar tu peso óptimo y mejorar tu calidad de vida y salud. Juntos, trazaremos metas individualizadas que te permitan alcanzar tus objetivos de manera profesional y eficiente. 
+                                
+                            
+                          
+                        
+                        </p></div></td></tr></tbody></table><table class="heading_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="text-align:center;width:100%;"><h1 style="margin:0;color: #82256d; direction: ltr; font-family: Verdana, Geneva, sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -2px; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0;"><strong><span class="tinyMce-placeholder">¡Bienvenido/a! 
+                            
+                          
+                        
+                        </span></strong></h1></td></tr></tbody></table><table class="paragraph_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; word-break: break-word;" width="100%" cellspacing="0" cellpadding="10" border="0">
+                          <tbody>
+                            <tr>
+                              <td><div style="color:#82256d;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:17px;font-weight:700;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:20.4px;">
+                                  <p style="margin:0;margin-bottom: 0px;"> 
+                                  </p><p style="margin:0;">${object.contacto.name} 
+                                
+                            
+                          
+                        
+                        </p></div></td></tr></tbody></table><table class="paragraph_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; word-break: break-word;" width="100%" cellspacing="0" cellpadding="10" border="0">
+                          <tbody>
+                            <tr>
+                              <td><div style="color:#82256d;direction:ltr;font-family:Verdana, Geneva, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:center;mso-line-height-alt:16.8px;">
+                                  <p style="margin:0;margin-bottom: 3px;">Es un placer que formes parte de <strong>nuestro equipo. 
+                                  </strong></p><p style="margin:0;margin-bottom: 3px;">Pronto iniciaremos tu <strong>primera valoración </strong>por parte del servicio de nutrición clínica y médica. 
+                                  </p><p style="margin:0;"><strong>Contamos con un equipo de expertos en: 
+                                
+                            
+                          
+                        
+                        </strong></p></div></td></tr></tbody></table><table class="paragraph_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; word-break: break-word;" width="100%" cellspacing="0" cellpadding="10" border="0">
+                          <tbody>
+                            <tr>
+                              <td><div style="color:#393d47;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;"></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="image_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="width:100%;padding-right:0px;padding-left:0px;"><div style="line-height:10px" align="center"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/05_CARTA_ASSETS.png" style="display:block;height: auto; border: 0; width: 379px; max-width: 100%;"/></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="image_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="width:100%;padding-right:0px;padding-left:0px;"><div style="line-height:10px" align="center"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/06_CARTA_ASSETS.png" style="display:block;height: auto; border: 0; width: 480px; max-width: 100%;"/></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="image_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="width:100%;padding-right:0px;padding-left:0px;"><div style="line-height:10px" align="center"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/821211_805157/editor_images/07_CARTA_ASSETS.png" style="display:block;height: auto; border: 0; width: 505px; max-width: 100%;"/></div></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </td></tr></tbody></table></td></tr></tbody></table><table class="row row-2" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+          <tbody>
+            <tr>
+              <td><table class="row-content stack" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; color: #000000; width: 505px;" width="505" cellspacing="0" cellpadding="0" border="0" align="center">
+                  <tbody>
+                    <tr>
+                      <td class="column column-1" style="mso-table-lspace:0pt;mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;" width="100%"><table class="icons_block" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td style="vertical-align:middle;color: #9d9d9d; font-family: inherit; font-size: 15px; padding-bottom: 5px; padding-top: 5px; text-align: center;"><table role="presentation" style="mso-table-lspace:0pt;mso-table-rspace: 0pt;" width="100%" cellspacing="0" cellpadding="0">
+                                  <tbody>
+                                    <tr>
+                                      <td style="vertical-align:middle;text-align: center;"></td>
+                                    </tr>
+                                  </tbody>
+                                </table></td>
+                            </tr>
+                          </tbody>
+                        </table></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+            </tr>
+          </tbody>
+        </table>
+</td></tr></tbody></table>
+% endif
 </body>
 
 </html>
