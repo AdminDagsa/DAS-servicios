@@ -24,10 +24,14 @@
                                 <div>
                                     <strong class="o_kanban_record_title"><span><field name="name"/></span></strong>
                                 </div>
-                                <div>
+                                <div invisible="1">
                                     <span class="o_kanban_record_subtitle"><field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/></span>
                                 </div>
-                                <div class="o_kanban_record_bottom">
+                                <div>
+                                    <span>Citas: <field name="citas"/></span><br/>
+                                    <span>Llamadas: <field name="llamadas"/></span>
+                                </div>
+                                <div class="o_kanban_record_bottom" invisible="1">
                                     <div class="oe_kanban_bottom_left">
                                         <field name="priority" widget="priority"/>
                                         <div class="o_kanban_inline_block">
