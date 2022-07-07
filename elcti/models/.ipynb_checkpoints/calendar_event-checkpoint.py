@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
+from datetime import timedelta
 from odoo.exceptions import UserError, ValidationError
 
 class Calendario(models.Model):
@@ -71,4 +72,14 @@ class Calendario(models.Model):
     def fecha_cita(self):
         dias = {"0":"domingo", "1":"lunes", "2":"martes", "3":"miércoles", "4":"jueves", "5":"viernes", "6":"sábado"}
         meses = {"1":"enero", "2":"febrero", "3":"marzo", "4":"abril", "5":"mayo", "6":"junio", "7":"julio", "8":"agosto", "9":"septiembre", "10":"octubre", "11":"noviembre", "12":"diciembre"}
-        return dias[self.start.strftime("%w")] + ' ' + str(self.start.strftime("%-d")) + ' de ' + meses[self.start.strftime("%-m")] + ' de ' + str(self.start.strftime("%Y")) + ' a las ' + str(self.start.strftime("%X"))
+        tiempo = self.start - timedelta(hours=5)
+        return dias[tiempo.strftime("%w")] + ' ' + str(tiempo.strftime("%-d")) + ' de ' + meses[tiempo.strftime("%-m")] + ' de ' + str(tiempo.strftime("%Y")) + ' a las ' + str(tiempo.strftime("%X"))
+    
+    @api.onchange('categ_ids', 'start', 'duration')
+    def _ubicacion(self):
+        for record in self:
+            if record.categ_ids:
+                record.location = record.categ_ids.direccion
+            else:
+                record.location = None
+            record.stop = record.start + timedelta(hours=record.duration)

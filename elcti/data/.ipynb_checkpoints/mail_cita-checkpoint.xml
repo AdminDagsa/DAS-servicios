@@ -108,7 +108,7 @@
     <div style="margin-bottom:20px">
         <p>Acude a tu cita el día ${object.fecha_cita()}</p>
         <p>Dirección:<br/>${object.categ_ids[0].direccion}</p>
-        % if object.description != "":
+        % if object.description != False:
         <p>Notas:<br/>${object.description}</p>
         % endif
     </div>
@@ -233,7 +233,6 @@
 
 </html>
             </field>
-            <field name="auto_delete" eval="True"/>
         </record>
     </data>
 </odoo>
