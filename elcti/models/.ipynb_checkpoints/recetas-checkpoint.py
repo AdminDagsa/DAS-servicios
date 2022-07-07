@@ -13,12 +13,30 @@ class Receta(models.Model):
     lineas_receta = fields.One2many('lineas.recetas', 'receta', string="Productos", store=True)
     enlace_de_pago = fields.Char('Enlace de pago')
     enlace_dar = fields.Char('Enlace DAR')
-    direccion = fields.Char('Dirección', related="contacto.street")
-    pais = fields.Many2one('res.country', string="País", related="contacto.country_id")
-    estado = fields.Many2one('res.country.state', string="Estado", related="contacto.state_id")
-    ciudad = fields.Many2one('res.city', string="Ciudad", related="contacto.ciudad")
-    colonia = fields.Char('Colonia', related="contacto.city")
-    cp = fields.Char('C.P.', related="contacto.zip")
+    direccion = fields.Char('Dirección')
+    pais = fields.Many2one('res.country', string="País")
+    estado = fields.Many2one('res.country.state', string="Estado")
+    ciudad = fields.Many2one('res.city', string="Ciudad")
+    colonia = fields.Char('Colonia')
+    cp = fields.Char('C.P.')
+    
+    @api.onchange('contacto')
+    def _poner_direccion(self):
+        for record in self:
+            if record.contacto != False:
+                record.direccion = record.contacto.street
+                record.pais = record.contacto.country_id
+                record.estado = record.contacto.state_id
+                record.ciudad = record.contacto.ciudad
+                record.colonia = record.contacto.city
+                record.cp = record.contacto.zip
+            else:
+                record.direccion = None
+                record.pais = None
+                record.estado = None
+                record.ciudad = None
+                record.colonia = None
+                record.cp = None
     
     payment_type = fields.Char('Tipo de Pago')
     payment_id = fields.Char('Id de Pago')

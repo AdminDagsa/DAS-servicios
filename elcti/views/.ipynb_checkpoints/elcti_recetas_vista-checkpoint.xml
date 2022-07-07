@@ -26,20 +26,20 @@
                             </h1>
                         </div>
                         <group name="studio_group_5b87c7">
-                            <group name="studio_group_5b87c7_left">
+                            <group name="studio_group_5b87c7_left" string="Paciente">
                                 <field name="contacto"/>
                                 <field name="edad"/>
                             </group>
-                            <group name="studio_group_5b87c7_right">
-                                <label for="direccion" string="Dirección"/>
-                                <div class="o_address_format" name="studio_div_21859d">
-                                    <field name="direccion" string="Direccion" class="o_address_street" options="{'no_open': True, 'no_create': True}"/>
-                                    <field name="pais" string="Pais" class="o_address_state" options="{'no_open': True, 'no_create': True}"/>
-                                    <field name="estado" string="Estado" class="o_address_state" options="{'no_open': True, 'no_create': True}" domain="[['country_id','=',pais]]"/>
-                                    <field name="ciudad" string="Ciudad" class="o_address_city" options="{'no_open': True, 'no_create': True}" domain="[['state_id','=',estado]]"/>
-                                    <field name="colonia" string="Municipio/Colonia" class="o_address_state"/>
-                                    <field name="cp" string="CP" class="o_address_zip"/>
+                            <group name="studio_group_5b87c7_right" string="Dirección de entrega">
+                                <div class="alert alert-info" role="alert">
+                                    Estos campos se pueden cambiar sin afectar la dirección principal del cliente, pero son requeridos para el envío correcto del medicamento
                                 </div>
+                                <field name="direccion" string="Calle y número" class="o_address_street" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="pais" string="Pais" class="o_address_state" options="{'no_open': True, 'no_create': True}"/>
+                                <field name="estado" string="Estado" class="o_address_state" options="{'no_open': True, 'no_create': True}" domain="[['country_id','=',pais]]"/>
+                                <field name="ciudad" string="Ciudad/Delegación" class="o_address_city" options="{'no_open': True, 'no_create': True}" domain="[['state_id','=',estado]]"/>
+                                <field name="colonia" string="Municipio/Colonia" class="o_address_state"/>
+                                <field name="cp" string="CP" class="o_address_zip"/>
                             </group>
                         </group>
                         <group>
