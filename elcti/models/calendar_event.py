@@ -6,6 +6,13 @@ from odoo.exceptions import UserError, ValidationError
 class Calendario(models.Model):
     _inherit = 'calendar.event'
     
+    estatus = fields.Selection([
+        ('Atendida','Atendida'),
+        ('No atendida','No atendida'),
+        ('Cancelada','Cancelada'),
+        ('Reagendada','Reagendada')],
+        string="Estatus"
+    )
     contacto = fields.Many2one('crm.lead', "Contacto")
     consultorio = fields.Char('Consultorio', store=True, related="categ_ids.name")
     llamada = fields.Many2one('llamadas', string='Llamada')

@@ -53,6 +53,7 @@
                         <field name="res_id" invisible="1"/>
                         <field name="attendee_status" invisible="1"/>
                         <field name="active" invisible="1"/>
+                        <field name="estatus" widget="statusbar" clickable="1"/>
                         <div class="oe_title">
                             <div class="oe_edit_only">
                                 <label for="contacto"/>
@@ -113,6 +114,12 @@
                             </page>
                         </notebook>
                     </sheet>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
