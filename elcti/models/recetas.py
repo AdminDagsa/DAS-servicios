@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import fields, models, api
+from datetime import timedelta
 import requests, json
 
 class Receta(models.Model):
@@ -112,3 +113,10 @@ class Receta(models.Model):
     def enviar_correo_consulta(self):
         plantilla = self.env.ref('elcti.mail_consulta')
         plantilla.send_mail(self.id, force_send=True)
+        
+    def fecha_consulta(self):
+        dias = {"0":"domingo", "1":"lunes", "2":"martes", "3":"miércoles", "4":"jueves", "5":"viernes", "6":"sábado"}
+        meses = {"1":"enero", "2":"febrero", "3":"marzo", "4":"abril", "5":"mayo", "6":"junio", "7":"julio", "8":"agosto", "9":"septiembre", "10":"octubre", "11":"noviembre", "12":"diciembre"}
+        tiempo = self.create_date - timedelta(hours=5)
+        #return dias[tiempo.strftime("%w")] + ' ' + str(tiempo.strftime("%-d")) + ' de ' + meses[tiempo.strftime("%-m")] + ' de ' + str(tiempo.strftime("%Y")) + ' a las ' + str(tiempo.strftime("%X"))
+        return str(tiempo.strftime("%-d")) + ' de ' + meses[tiempo.strftime("%-m")] + ' de ' + str(tiempo.strftime("%Y"))
